@@ -16,6 +16,7 @@ import {
   Activity,
   ArrowDown
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import { PROJECTS, BLOG_POSTS } from './constants';
 import DecisionLab from './components/DecisionLab';
 
@@ -289,6 +290,7 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
+      <Analytics />
     </div>
   );
 };
