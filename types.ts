@@ -26,3 +26,47 @@ export interface DecisionAnalysis {
   biases: BiasAnalysis[];
   recommendation: string;
 }
+
+export interface Alternative {
+  id: string;
+  name: string;
+  score?: number;
+}
+
+export interface Criterion {
+  id: string;
+  name: string;
+  weight: number;
+}
+
+export interface Risk {
+  description: string;
+  theme: 'execution' | 'market' | 'technical' | 'organizational' | 'financial' | 'other';
+  likelihood: 'low' | 'medium' | 'high';
+  impact: 'low' | 'medium' | 'high';
+  mitigation: string;
+}
+
+export interface SimulationResult {
+  mean: number;
+  median: number;
+  p10: number;
+  p90: number;
+  probLoss: number;
+}
+
+export interface DecisionState {
+  statement: string;
+  objectives: string;
+  alternatives: Alternative[];
+  criteria: Criterion[];
+  scores: Record<string, Record<string, number>>;
+  mcResult: SimulationResult | null;
+  risks: Risk[];
+  topChoice: { id: string; name: string; bestCase: number; mostLikely: number; worstCase: number } | null;
+  meta: {
+    threshold: number;
+    reversibility: string;
+    reversibilityLabel: string;
+  };
+}
