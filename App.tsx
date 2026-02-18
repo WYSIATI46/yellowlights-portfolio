@@ -16,6 +16,7 @@ import {
   Activity,
   ArrowDown
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { PROJECTS, BLOG_POSTS } from './constants';
 import DecisionLab from './components/DecisionLab';
 
@@ -289,6 +290,7 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
+      <SpeedInsights />
     </div>
   );
 };
