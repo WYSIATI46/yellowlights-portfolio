@@ -1,9 +1,8 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -41,3 +40,26 @@ Identify 3-4 key risks. Return JSON only, no markdown:
 {"risks": [{"title": "risk name", "description": "what could go wrong", "likelihood": "Low|Medium|High", "impact": "Low|Medium|High"}]}`;
     } else if (action === 'refineMemo') {
       const { rawText } = data;
+      prompt = `Refine this decision memo into clear, professional prose. Keep all facts. Return JSON only, no markdown:
+{"refined": "refined memo text here"}
+
+Memo: ${rawText}`;
+    } else {
+      return res.status(400).json({ error: 'Unknown action' });
+    }
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: prompt,
+    });
+
+    const text = response.text.replace(/```json\n?|\n?```/g, '').trim();
+    const parsed = JSON.parse(text);
+
+    return res.status(200).json({ result: parsed });
+
+  } catch (error: any) {
+    console.error('Gemini API error:', error);
+    return res.status(500).json({ error: error.message || 'Internal server error' });
+  }
+}
