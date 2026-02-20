@@ -1,13 +1,10 @@
-import { GoogleGenAI } from '@google/genai';
-
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
-
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!process.env.GEMINI_API_KEY) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
     return res.status(500).json({ error: 'API key not configured' });
   }
 
@@ -29,18 +26,16 @@ Suggest 3-5 additional creative alternatives not already listed. Return JSON onl
       const { decision, rankings } = data;
       const top = rankings?.[0]?.name || 'top option';
       prompt = `You are a decision analyst. The top-ranked option is "${top}" for this decision: "${decision.decisionStatement}".
-Provide a 2-3 sentence insight on what this ranking reveals. Return JSON only, no markdown:
+Provide a 2-3 sentence insight. Return JSON only, no markdown:
 {"insight": "your insight here"}`;
     } else if (action === 'brainstormRisks') {
       const { decision, topChoice } = data;
-      prompt = `You are a risk analyst doing a pre-mortem. For this decision: "${decision.decisionStatement}"
-Top choice: "${topChoice.name}"
-
+      prompt = `You are a risk analyst. For this decision: "${decision.decisionStatement}", top choice: "${topChoice.name}".
 Identify 3-4 key risks. Return JSON only, no markdown:
 {"risks": [{"title": "risk name", "description": "what could go wrong", "likelihood": "Low|Medium|High", "impact": "Low|Medium|High"}]}`;
     } else if (action === 'refineMemo') {
       const { rawText } = data;
-      prompt = `Refine this decision memo into clear, professional prose. Keep all facts. Return JSON only, no markdown:
+      prompt = `Refine this decision memo into clear professional prose. Return JSON only, no markdown:
 {"refined": "refined memo text here"}
 
 Memo: ${rawText}`;
@@ -48,18 +43,32 @@ Memo: ${rawText}`;
       return res.status(400).json({ error: 'Unknown action' });
     }
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
-      contents: prompt,
-    });
+    const geminiRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }]
+        }),
+      }
+    );
 
-    const text = response.text.replace(/```json\n?|\n?```/g, '').trim();
-    const parsed = JSON.parse(text);
+    if (!geminiRes.ok) {
+      const errText = await geminiRes.text();
+      console.error('Gemini API error:', errText);
+      return res.status(500).json({ error: `Gemini error: ${geminiRes.status}` });
+    }
+
+    const geminiData = await geminiRes.json();
+    const text = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const clean = text.replace(/```json\n?|\n?```/g, '').trim();
+    const parsed = JSON.parse(clean);
 
     return res.status(200).json({ result: parsed });
 
   } catch (error: any) {
-    console.error('Gemini API error:', error);
+    console.error('Handler error:', error);
     return res.status(500).json({ error: error.message || 'Internal server error' });
   }
 }
