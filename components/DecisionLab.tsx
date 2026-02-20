@@ -1646,7 +1646,18 @@ function PreMortemStage({
 // ══════════════════════════════════════
 // STAGE 7: SYNTHESIS (Decision Memo)
 // ══════════════════════════════════════
-
+function renderMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^### (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
+    .replace(/^# (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
+    .replace(/^\* (.+)$/gm, '<li class="ml-4 list-disc">$1</li>')
+    .replace(/^(\d+)\. (.+)$/gm, '<li class="ml-4 list-decimal">$2</li>')
+    .replace(/\n\n/g, '</p><p class="mt-4">')
+    .replace(/^(?!<)(.+)$/gm, '<p>$1</p>');
+}
 function SynthesisStage({
   decision,
   onReset,
@@ -1673,6 +1684,7 @@ function SynthesisStage({
     if (!memoRef.current) return;
     const rawText = memoRef.current.innerText;
     setMemoRefining(true);
+    await new Promise(resolve => setTimeout(resolve, 0));
     try {
       const result = await geminiService.refineMemo(rawText);
       setRefinedMemo(result.trim());
@@ -1875,9 +1887,10 @@ function SynthesisStage({
 
         {/* Refined memo display */}
         {showRefined && refinedMemo && (
-          <div className="md:col-span-8 prose serif max-w-none whitespace-pre-wrap mt-8">
-            {refinedMemo}
-          </div>
+          <div
+            className="md:col-span-8 prose serif max-w-none mt-8"
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(refinedMemo) }}
+          />
         )}
       </div>
 
