@@ -1,4 +1,3 @@
-
 import React, { useState, useReducer, useRef, useEffect, useMemo, useCallback } from 'react';
 import { geminiService } from '../services/geminiService';
 import { DecisionState, Alternative, Criterion, Risk, SimulationResult } from '../types';
@@ -1657,29 +1656,34 @@ function PreMortemStage({
 // ══════════════════════════════════════
 // STAGE 7: SYNTHESIS (Decision Memo)
 // ══════════════════════════════════════
+
+// FIX 2 & 3 & 4: Headers bold not italic, no number prefixes; dash bullets + indented sub-items; numbered list spacing
 function renderMarkdown(text: string): string {
-  // Convert headers
+  // Convert headers — bold only (not italic), strip leading number prefixes like "1. "
   let html = text
-    .replace(/^### (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-lg">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-lg">$1</h3>')
-    .replace(/^# (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-xl">$1</h3>');
+    .replace(/^### (.+)$/gm, (_, t) => `<h3 class="font-bold text-black mt-8 mb-2 text-lg">${t.replace(/^\d+\.\s*/, '')}</h3>`)
+    .replace(/^## (.+)$/gm, (_, t) => `<h3 class="font-bold text-black mt-8 mb-2 text-lg">${t.replace(/^\d+\.\s*/, '')}</h3>`)
+    .replace(/^# (.+)$/gm, (_, t) => `<h3 class="font-bold text-black mt-8 mb-2 text-xl">${t.replace(/^\d+\.\s*/, '')}</h3>`);
   // Convert bold and italic
   html = html
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>');
-  // Convert numbered lists — group into <ol> blocks starting at 1
+  // Convert numbered lists — top-level only; sub-items handled as bullets
   html = html.replace(/((?:^\d+\. .+\n?)+)/gm, (block) => {
     const items = block.trim().split('\n').map(line => {
       const content = line.replace(/^\d+\. /, '');
-      return `<li class="ml-4">${content}</li>`;
+      return `<li class="ml-4 mb-2">${content}</li>`;
     }).join('');
-    return `<ol class="list-decimal ml-4 space-y-1 mt-2">${items}</ol>`;
+    return `<ol class="list-decimal ml-4 space-y-2 mt-2 mb-4">${items}</ol>`;
   });
-  // Convert bullet lists — group into <ul> blocks
-  html = html.replace(/((?:^\* .+\n?)+)/gm, (block) => {
+  // Convert bullet lists — support both * and - bullets, including indented sub-items
+  html = html.replace(/((?:^[ \t]*[-*] .+\n?)+)/gm, (block) => {
     const items = block.trim().split('\n').map(line => {
-      const content = line.replace(/^\* /, '');
-      return `<li class="ml-4">${content}</li>`;
+      const isIndented = /^[ \t]{2,}/.test(line);
+      const content = line.replace(/^[ \t]*[-*] /, '');
+      return isIndented
+        ? `<li class="ml-8">${content}</li>`
+        : `<li class="ml-4">${content}</li>`;
     }).join('');
     return `<ul class="list-disc ml-4 space-y-1 mt-2">${items}</ul>`;
   });
@@ -1688,6 +1692,7 @@ function renderMarkdown(text: string): string {
   html = html.replace(/^(?!<)(.+)$/gm, '<p>$1</p>');
   return html;
 }
+
 function SynthesisStage({
   decision,
   onReset,
@@ -1962,15 +1967,32 @@ function SynthesisStage({
 
       <div className="flex flex-wrap gap-4 pt-8 justify-between">
         <div className="flex gap-4">
+          {/* FIX 1: Print via new window (no layout gaps/stretching) + renamed to "Print Memo" */}
           <button
             onClick={() => {
-              document.body.classList.add('printing-memo');
-              window.print();
-              document.body.classList.remove('printing-memo');
+              const memoEl = document.getElementById('memo-output');
+              if (!memoEl) return;
+              const pw = window.open('', '_blank');
+              if (!pw) return;
+              pw.document.write(`<!DOCTYPE html><html><head><title>Decision Memo</title><style>
+                body { font-family: Georgia, serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #000; font-size: 11pt; }
+                h1 { font-size: 22pt; font-weight: 900; margin-bottom: 6px; }
+                h3, h4 { font-size: 13pt; font-weight: bold; margin-top: 20px; margin-bottom: 6px; }
+                ul, ol { padding-left: 20px; margin: 6px 0; }
+                li { margin-bottom: 4px; line-height: 1.5; }
+                p { line-height: 1.6; margin: 6px 0; }
+                strong { font-weight: bold; }
+                .bg-yellow-500 { background-color: #eab308; }
+                .rounded-2xl { border-radius: 1rem; }
+                .mono { font-family: monospace; }
+              </style></head><body>${memoEl.innerHTML}</body></html>`);
+              pw.document.close();
+              pw.focus();
+              setTimeout(() => { pw.print(); pw.close(); }, 600);
             }}
-            className="px-8 py-4 bg-black text-white rounded-xl font-black uppercase text-[10px] tracking-widest flex items-center gap-2"
+            className="px-8 py-4 bg-black text-white rounded-xl font-black uppercase text-[10px] tracking-widest flex items-center gap-2 hover:bg-zinc-800 transition-all"
           >
-            <Printer size={14} /> Print Protocol
+            <Printer size={14} /> Print Memo
           </button>
           <button
             onClick={handleCopy}
