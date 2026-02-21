@@ -30,7 +30,7 @@ Identify 3-4 key risks. Return JSON only, no markdown:
 {"risks": [{"title": "risk name", "description": "what could go wrong", "likelihood": "Low|Medium|High", "impact": "Low|Medium|High"}]}`;
     } else if (action === 'refineMemo') {
       const { rawText } = data;
-      prompt = `Refine this decision memo into clear professional prose. Return JSON only, no markdown:
+      prompt = `Refine this decision memo into clear professional prose. Always start numbered lists from 1. Use ## for section headers and ### for subsection headers. Return JSON only, no markdown:
 {"refined": "refined memo text here"}
 Memo: ${rawText}`;
     } else {

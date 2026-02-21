@@ -916,6 +916,14 @@ function ScoringStage({
                     }`}
                   >
                     {r.score.toFixed(1)}
+                    <span className={`ml-2 text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                      r.score >= 8 ? 'bg-green-100 text-green-700' :
+                      r.score >= 6 ? 'bg-yellow-100 text-yellow-700' :
+                      r.score >= 4 ? 'bg-orange-100 text-orange-700' :
+                      'bg-red-100 text-red-700'
+                    }`}>
+                      {r.score >= 8 ? 'Strong' : r.score >= 6 ? 'Moderate' : r.score >= 4 ? 'Weak' : 'Poor'}
+                    </span>
                   </td>
                 </tr>
               ))}
@@ -1117,12 +1125,15 @@ function UncertaintyStage({
 
   return (
     <div className="space-y-12">
-      <div className="p-8 bg-black text-white rounded-[2rem] flex flex-col items-center text-center">
-        <Brain className="text-yellow-500 mb-6" size={48} />
-        <h3 className="serif text-3xl font-black italic mb-4">Monte Carlo Forecast</h3>
-        <p className="text-zinc-400 text-sm max-w-md mb-12">
+      <div className="p-8 bg-[#fbfaf8] rounded-[2rem] flex flex-col items-center text-center border border-black/5">
+        <Brain className="text-yellow-600 mb-6" size={48} />
+        <h3 className="serif text-3xl font-black italic mb-4 text-black">Monte Carlo Forecast</h3>
+        <p className="text-zinc-500 text-xs max-w-md mb-6 leading-relaxed">
+          Monte Carlo simulation runs thousands of random scenarios within your stated range to estimate the probability distribution of outcomes — giving you a realistic spread, not just a single guess.
+        </p>
+        <p className="text-zinc-500 text-sm max-w-md mb-12">
           Estimate the range of outcomes for{' '}
-          <span className="text-white font-bold">{topName}</span>. Uses 10,000 triangular
+          <span className="text-black font-bold">{topName}</span>. Uses 10,000 triangular
           distribution simulations.
         </p>
 
@@ -1138,7 +1149,7 @@ function UncertaintyStage({
                   value={bestCase}
                   onChange={(e) => setBestCase(e.target.value)}
                   placeholder="e.g. $2M"
-                  className="w-full bg-white/10 p-4 rounded-xl mono text-white outline-none border border-white/5 focus:border-yellow-500"
+                  className="w-full bg-black/5 p-4 rounded-xl mono text-black outline-none border border-black/10 focus:border-yellow-500"
                 />
               </div>
               <div className="space-y-4">
@@ -1150,7 +1161,7 @@ function UncertaintyStage({
                   value={mostLikely}
                   onChange={(e) => setMostLikely(e.target.value)}
                   placeholder="e.g. $800K"
-                  className="w-full bg-white/10 p-4 rounded-xl mono text-white outline-none border border-white/5 focus:border-yellow-500"
+                  className="w-full bg-black/5 p-4 rounded-xl mono text-black outline-none border border-black/10 focus:border-yellow-500"
                 />
               </div>
               <div className="space-y-4">
@@ -1165,7 +1176,7 @@ function UncertaintyStage({
                     setValidationError('');
                   }}
                   placeholder="e.g. -$500K"
-                  className="w-full bg-white/10 p-4 rounded-xl mono text-white outline-none border border-white/5 focus:border-yellow-500"
+                  className="w-full bg-black/5 p-4 rounded-xl mono text-black outline-none border border-black/10 focus:border-yellow-500"
                 />
               </div>
             </div>
@@ -1187,7 +1198,7 @@ function UncertaintyStage({
         {isComputing && (
           <div className="flex items-center gap-3 py-12">
             <Loader2 className="animate-spin text-yellow-500" size={24} />
-            <span className="mono text-sm text-zinc-400">Running 10,000 Monte Carlo simulations...</span>
+            <span className="mono text-sm text-zinc-500">Running 10,000 Monte Carlo simulations...</span>
           </div>
         )}
 
@@ -1195,7 +1206,7 @@ function UncertaintyStage({
           <div className="w-full max-w-2xl text-left mt-8">
             {/* Visual range bar */}
             <div className="mb-6">
-              <div className="relative h-12 rounded-lg overflow-hidden bg-white/10">
+              <div className="relative h-12 rounded-lg overflow-hidden bg-black/10">
                 <div
                   className="absolute h-full bg-yellow-500/30"
                   style={{
@@ -1214,37 +1225,37 @@ function UncertaintyStage({
                 />
                 <div className="absolute inset-0 flex items-center justify-between px-3 text-xs mono">
                   <span className="text-zinc-500">{fmt(parseNum(worstCase))}</span>
-                  <span className="text-yellow-500 font-bold">{fmt(mcResult.mean)}</span>
+                  <span className="text-yellow-600 font-bold">{fmt(mcResult.mean)}</span>
                   <span className="text-zinc-500">{fmt(parseNum(bestCase))}</span>
                 </div>
-              </div>
-              <div className="text-xs mt-2 text-center text-zinc-500 mono">
-                <span className="text-yellow-500">\u2588</span> Expected value &nbsp;&nbsp;
-                <span className="text-yellow-500/60">\u2593</span> 80% confidence range (P10\u2013P90)
               </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              <div className="bg-white/5 p-4 rounded-xl">
+              <div className="bg-black/5 p-4 rounded-xl">
                 <div className="mono text-[9px] uppercase text-zinc-500 mb-1">Expected Value</div>
-                <div className="mono font-bold text-white">{fmt(mcResult.mean)}</div>
+                <div className="mono font-bold text-black">{fmt(mcResult.mean)}</div>
               </div>
-              <div className="bg-white/5 p-4 rounded-xl">
+              <div className="bg-black/5 p-4 rounded-xl">
                 <div className="mono text-[9px] uppercase text-zinc-500 mb-1">Median</div>
-                <div className="mono font-bold text-white">{fmt(mcResult.median)}</div>
+                <div className="mono font-bold text-black">{fmt(mcResult.median)}</div>
               </div>
-              <div className="bg-white/5 p-4 rounded-xl">
+              <div className="bg-black/5 p-4 rounded-xl">
                 <div className="mono text-[9px] uppercase text-zinc-500 mb-1">P10 \u2013 P90</div>
-                <div className="mono font-bold text-white">
+                <div className="mono font-bold text-black">
                   {fmt(mcResult.p10)} to {fmt(mcResult.p90)}
                 </div>
               </div>
-              <div className="bg-white/5 p-4 rounded-xl">
+              <div className="bg-black/5 p-4 rounded-xl">
                 <div className="mono text-[9px] uppercase text-zinc-500 mb-1">Loss Probability</div>
                 <div className={`mono font-bold ${mcResult.probLoss > 0.3 ? 'text-red-400' : 'text-green-400'}`}>
                   {(mcResult.probLoss * 100).toFixed(0)}%
                 </div>
               </div>
+            </div>
+
+            <div className="w-full max-w-2xl p-5 rounded-xl bg-black/5 border border-black/10 mt-2 mb-4 text-sm text-zinc-600 leading-relaxed">
+              In plain terms: across 10,000 simulated scenarios, the most likely outcome is around <strong className="text-black">{fmt(mcResult.mean)}</strong>. There's an 80% chance the actual result falls between <strong className="text-black">{fmt(mcResult.p10)}</strong> and <strong className="text-black">{fmt(mcResult.p90)}</strong>.{mcResult.probLoss > 0.05 ? ` Worth noting: there's a ${(mcResult.probLoss * 100).toFixed(0)}% chance of a net loss.` : ' The probability of a net loss is minimal.'}
             </div>
 
             <div className="flex justify-between mt-8">
@@ -1253,7 +1264,7 @@ function UncertaintyStage({
                   setMcResult(null);
                   setValidationError('');
                 }}
-                className="px-6 py-3 border border-white/10 rounded-xl text-zinc-400 text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
+                className="px-6 py-3 border border-black/10 rounded-xl text-zinc-400 text-xs font-bold uppercase tracking-widest hover:bg-black/10 transition-all"
               >
                 <RefreshCw className="inline mr-2" size={12} /> Adjust Estimates
               </button>
@@ -1647,16 +1658,35 @@ function PreMortemStage({
 // STAGE 7: SYNTHESIS (Decision Memo)
 // ══════════════════════════════════════
 function renderMarkdown(text: string): string {
-  return text
+  // Convert headers
+  let html = text
+    .replace(/^### (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-lg">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-lg">$1</h3>')
+    .replace(/^# (.+)$/gm, '<h3 class="font-bold italic text-black mt-8 mb-2 text-xl">$1</h3>');
+  // Convert bold and italic
+  html = html
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/^### (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
-    .replace(/^# (.+)$/gm, '<h3 class="font-black italic mt-8 mb-2">$1</h3>')
-    .replace(/^\* (.+)$/gm, '<li class="ml-4 list-disc">$1</li>')
-    .replace(/^(\d+)\. (.+)$/gm, '<li class="ml-4 list-decimal">$2</li>')
-    .replace(/\n\n/g, '</p><p class="mt-4">')
-    .replace(/^(?!<)(.+)$/gm, '<p>$1</p>');
+    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+  // Convert numbered lists — group into <ol> blocks starting at 1
+  html = html.replace(/((?:^\d+\. .+\n?)+)/gm, (block) => {
+    const items = block.trim().split('\n').map(line => {
+      const content = line.replace(/^\d+\. /, '');
+      return `<li class="ml-4">${content}</li>`;
+    }).join('');
+    return `<ol class="list-decimal ml-4 space-y-1 mt-2">${items}</ol>`;
+  });
+  // Convert bullet lists — group into <ul> blocks
+  html = html.replace(/((?:^\* .+\n?)+)/gm, (block) => {
+    const items = block.trim().split('\n').map(line => {
+      const content = line.replace(/^\* /, '');
+      return `<li class="ml-4">${content}</li>`;
+    }).join('');
+    return `<ul class="list-disc ml-4 space-y-1 mt-2">${items}</ul>`;
+  });
+  // Convert paragraphs
+  html = html.replace(/\n\n/g, '</p><p class="mt-4">');
+  html = html.replace(/^(?!<)(.+)$/gm, '<p>$1</p>');
+  return html;
 }
 function SynthesisStage({
   decision,
@@ -2007,6 +2037,23 @@ const DecisionLab: React.FC = () => {
   const currentStage = STAGES[currentStageIdx];
 
   return (
+    <style>{`
+  @media print {
+    body > * { display: none !important; }
+    #memo-output { display: block !important; }
+    #memo-output * { display: revert !important; }
+    .shadow-inner, .shadow-2xl, .shadow-xl { box-shadow: none !important; }
+    .rounded-\\[2rem\\], .rounded-3xl, .rounded-2xl { border-radius: 0 !important; }
+    section, header, footer, nav { display: none !important; }
+    #memo-output {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 40px;
+      font-size: 11pt;
+    }
+  }
+`}</style>
     <section className="py-40 px-6 sm:px-12 bg-[#fbfaf8] relative border-y border-black/5 overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Progress System */}
