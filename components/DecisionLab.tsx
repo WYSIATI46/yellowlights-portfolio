@@ -2034,26 +2034,28 @@ const DecisionLab: React.FC = () => {
     setCurrentStageIdx(0);
   }, []);
 
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.id = 'print-memo-styles';
+    style.textContent = `
+      @media print {
+        body > * { visibility: hidden; }
+        #memo-output { visibility: visible; position: fixed; top: 0; left: 0; width: 100%; padding: 40px; font-size: 11pt; }
+        #memo-output * { visibility: visible; }
+        #memo-output .shadow-inner,
+        #memo-output .shadow-2xl { box-shadow: none; }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      const el = document.getElementById('print-memo-styles');
+      if (el) el.remove();
+    };
+  }, []);
+
   const currentStage = STAGES[currentStageIdx];
 
   return (
-    <style>{`
-  @media print {
-    body > * { display: none !important; }
-    #memo-output { display: block !important; }
-    #memo-output * { display: revert !important; }
-    .shadow-inner, .shadow-2xl, .shadow-xl { box-shadow: none !important; }
-    .rounded-\\[2rem\\], .rounded-3xl, .rounded-2xl { border-radius: 0 !important; }
-    section, header, footer, nav { display: none !important; }
-    #memo-output {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      padding: 40px;
-      font-size: 11pt;
-    }
-  }
-`}</style>
     <section className="py-40 px-6 sm:px-12 bg-[#fbfaf8] relative border-y border-black/5 overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Progress System */}
