@@ -45,10 +45,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-12">
-            {['Laboratory', 'Archive', 'Journal', 'Inquiry'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`} 
+            {['Laboratory', 'Interactive Artifacts', 'Journal', 'Inquiry'].map((item) => (
+              <a
+                key={item}
+                href={`#${item === 'Interactive Artifacts' ? 'interactive-artifacts' : item.toLowerCase()}`}
                 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-black transition-colors"
               >
                 {item}
@@ -89,7 +89,7 @@ const App: React.FC = () => {
                 <a href="#laboratory" className="px-12 py-6 bg-black text-white font-black uppercase text-xs tracking-[0.3em] rounded-2xl hover:bg-yellow-500 hover:text-black transition-all transform hover:-translate-y-1">
                   Enter Laboratory
                 </a>
-                <a href="#archive" className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 hover:text-black transition-all group">
+                <a href="#interactive-artifacts" className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 hover:text-black transition-all group">
                   Browse Artifacts <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -129,12 +129,12 @@ const App: React.FC = () => {
       </section>
 
       {/* Archive: Specimen Grid */}
-      <section id="archive" className="py-40 px-6 sm:px-12 bg-black/[0.01] border-y border-black/5 scroll-mt-24">
+      <section id="interactive-artifacts" className="py-40 px-6 sm:px-12 bg-black/[0.01] border-y border-black/5 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
             <div>
               <span className="mono text-[10px] font-bold text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Archive Series // 2024-2025</span>
-              <h2 className="serif text-7xl font-black italic tracking-tighter">Tactile <span className="text-zinc-400">Artifacts.</span></h2>
+              <h2 className="serif text-7xl font-black italic tracking-tighter">Interactive <span className="text-zinc-400">Artifacts.</span></h2>
             </div>
             <div className="max-w-sm text-sm text-zinc-400 leading-relaxed font-light italic">
               "Every decision leaves a trace. We document the path from heuristic to clarity."
@@ -142,29 +142,41 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {PROJECTS.map((project, idx) => (
-              <div key={project.id} className="glass-card p-12 rounded-[2.5rem] flex flex-col h-full group">
-                <div className="mb-12 flex justify-between items-start">
-                  <div className="w-14 h-14 bg-black/[0.02] rounded-2xl flex items-center justify-center transition-all group-hover:bg-yellow-500/10 group-hover:rotate-12">
-                    <Layers size={24} className="text-zinc-300 group-hover:text-yellow-600" />
+            {PROJECTS.map((project, idx) => {
+              const card = (
+                <div key={project.id} className="glass-card p-12 rounded-[2.5rem] flex flex-col h-full group">
+                  <div className="mb-12 flex justify-between items-start">
+                    <div className="w-14 h-14 bg-black/[0.02] rounded-2xl flex items-center justify-center transition-all group-hover:bg-yellow-500/10 group-hover:rotate-12">
+                      <Layers size={24} className="text-zinc-300 group-hover:text-yellow-600" />
+                    </div>
+                    <span className="mono text-5xl font-black text-black/[0.03] group-hover:text-black/[0.08]">0{idx + 1}</span>
                   </div>
-                  <span className="mono text-5xl font-black text-black/[0.03] group-hover:text-black/[0.08]">0{idx + 1}</span>
+                  <h3 className="serif text-3xl font-black italic mb-6 group-hover:text-black transition-colors">
+                    {project.title.replace('→', '')}
+                  </h3>
+                  <p className="text-sm font-light text-zinc-500 leading-relaxed mb-12 flex-grow">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-8 border-t border-black/5">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="px-4 py-1.5 rounded-full bg-black/5 text-[9px] font-bold uppercase tracking-widest text-zinc-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="serif text-3xl font-black italic mb-6 group-hover:text-black transition-colors">
-                  {project.title.replace('→', '')}
-                </h3>
-                <p className="text-sm font-light text-zinc-500 leading-relaxed mb-12 flex-grow">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-8 border-t border-black/5">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full bg-black/5 text-[9px] font-bold uppercase tracking-widest text-zinc-400">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+
+              if (project.id === 'cognitive-mapping-01') {
+                return (
+                  <a key={project.id} href="https://periodic-table-of-cognitive-element.vercel.app/" target="_blank" rel="noopener noreferrer" className="cursor-pointer block">
+                    {card}
+                  </a>
+                );
+              }
+
+              return card;
+            })}
           </div>
         </div>
       </section>
@@ -276,10 +288,10 @@ const App: React.FC = () => {
             <X size={32} />
           </button>
           <div className="space-y-12">
-            {['Laboratory', 'Archive', 'Journal', 'Inquiry'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`} 
+            {['Laboratory', 'Interactive Artifacts', 'Journal', 'Inquiry'].map((item) => (
+              <a
+                key={item}
+                href={`#${item === 'Interactive Artifacts' ? 'interactive-artifacts' : item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="block serif text-6xl font-black italic tracking-tighter text-zinc-800 hover:text-yellow-600 transition-colors"
               >
