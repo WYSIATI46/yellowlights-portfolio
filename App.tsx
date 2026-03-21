@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
   ArrowUpRight, 
@@ -20,6 +21,7 @@ import { PROJECTS, BLOG_POSTS } from './constants';
 import DecisionLab from './components/DecisionLab';
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -192,7 +194,15 @@ const App: React.FC = () => {
 
           <div className="space-y-6">
             {BLOG_POSTS.map((post) => (
-              <div key={post.id} className="glass-card p-12 rounded-[3rem] group cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-12 hover:bg-black/[0.01]">
+              <div
+                key={post.id}
+                onClick={() => navigate(`/journal/${
+                  post.id === '1' ? 'yellow-light' :
+                  post.id === '2' ? 'systemic-heuristics' :
+                  'designing-second-thought'
+                }`)}
+                className="glass-card p-12 rounded-[3rem] group cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-12 hover:bg-black/[0.01]"
+              >
                 <div className="flex-1">
                   <div className="flex items-center gap-4 text-[10px] mono font-bold uppercase tracking-widest text-zinc-400 mb-6">
                     <span className="text-yellow-600">{post.date}</span>
