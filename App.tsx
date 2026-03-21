@@ -133,7 +133,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
             <div>
-              <span className="mono text-[10px] font-bold text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Archive Series // 2024-2025</span>
+              <span className="mono text-[10px] font-bold text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Interactive Artifacts // 2024–2026</span>
               <h2 className="serif text-7xl font-black italic tracking-tighter">Interactive <span className="text-zinc-400">Artifacts.</span></h2>
             </div>
             <div className="max-w-sm text-sm text-zinc-400 leading-relaxed font-light italic">
@@ -142,22 +142,30 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {PROJECTS.map((project, idx) => {
-              const card = (
-                <div key={project.id} className="glass-card p-12 rounded-[2.5rem] flex flex-col h-full group">
-                  <div className="mb-12 flex justify-between items-start">
+            {PROJECTS.map((project, idx) => (
+              <a
+                key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer block"
+              >
+                <div className="glass-card p-8 rounded-[2.5rem] flex flex-col h-full group">
+                  <div className="mb-8 flex justify-between items-start">
                     <div className="w-14 h-14 bg-black/[0.02] rounded-2xl flex items-center justify-center transition-all group-hover:bg-yellow-500/10 group-hover:rotate-12">
                       <Layers size={24} className="text-zinc-300 group-hover:text-yellow-600" />
                     </div>
-                    <span className="mono text-5xl font-black text-black/[0.03] group-hover:text-black/[0.08]">0{idx + 1}</span>
+                    <span className="mono text-5xl font-black text-black/[0.03] group-hover:text-black/[0.08]">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <h3 className="serif text-3xl font-black italic mb-6 group-hover:text-black transition-colors">
-                    {project.title.replace('→', '')}
+                  <h3 className="serif text-2xl font-black italic mb-4 group-hover:text-black transition-colors">
+                    {project.title}
                   </h3>
-                  <p className="text-sm font-light text-zinc-500 leading-relaxed mb-12 flex-grow">
+                  <p className="text-sm font-light text-zinc-500 leading-relaxed mb-8 flex-grow">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 pt-8 border-t border-black/5">
+                  <div className="flex flex-wrap gap-2 pt-6 border-t border-black/5">
                     {project.tags.map(tag => (
                       <span key={tag} className="px-4 py-1.5 rounded-full bg-black/5 text-[9px] font-bold uppercase tracking-widest text-zinc-400">
                         {tag}
@@ -165,18 +173,8 @@ const App: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              );
-
-              if (project.id === 'cognitive-mapping-01') {
-                return (
-                  <a key={project.id} href="https://periodic-table-of-cognitive-element.vercel.app/" target="_blank" rel="noopener noreferrer" className="cursor-pointer block">
-                    {card}
-                  </a>
-                );
-              }
-
-              return card;
-            })}
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -261,7 +259,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <span className="mono text-[10px] uppercase font-black tracking-[0.2em] text-zinc-400">Engagement Status</span>
-                  <p className="text-sm font-bold text-black">Accepting Audits Q2 2025</p>
+                  <p className="text-sm font-bold text-black">Accepting Opportunities Q2 2026</p>
                 </div>
               </div>
             </div>
