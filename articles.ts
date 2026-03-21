@@ -14,7 +14,7 @@ export const ARTICLES: Article[] = [
     slug: 'yellow-light',
     title: 'The Yellow Light: In Praise of the Intentional Pause',
     subtitle: "In a world calibrated for instant clicks, the most radical design intervention is a deliberate hesitation. Mapping the benefits of \"Choice Sludge.\"",
-    date: 'Feb 12, 2025',
+    date: 'Mar 20, 2026',
     readTime: '11 min read',
     content: `## The Tyranny of Speed
 
@@ -95,7 +95,7 @@ Hesitation is not weakness. Sometimes it is the most intelligent response availa
     slug: 'systemic-heuristics',
     title: 'Systemic Heuristics in Institutional Logic',
     subtitle: 'How organizations inherit the biases of their founders and architects. A structural analysis of decision-making inheritance.',
-    date: 'Dec 18, 2024',
+    date: 'Mar 20, 2026',
     readTime: '15 min read',
     content: `## Opening: The Ghost in the Org Chart
 
@@ -186,7 +186,7 @@ The ghost in the org chart is always there. The question is whether you've desig
     slug: 'designing-second-thought',
     title: 'Designing for the Second Thought',
     subtitle: 'Why modern UX is failing human psychology by optimizing exclusively for speed, and how we can re-engineer friction.',
-    date: 'Oct 02, 2024',
+    date: 'Mar 20, 2026',
     readTime: '8 min read',
     content: `You're three taps into a mobile checkout. The screen asks nothing hard—just confirm payment. One thumb movement and it's done. The order notification arrives before you've fully processed what happened. You're not entirely sure what you just bought, or why.
 

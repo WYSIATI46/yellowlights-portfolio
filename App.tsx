@@ -280,11 +280,7 @@ const App: React.FC = () => {
               <div className="w-2 h-2 rounded-full bg-yellow-600 pulse-dot"></div>
               <span>Operational: San Francisco, CA</span>
             </div>
-            <p>© 2025 YellowLights.ai // Precision Insight</p>
-            <div className="flex gap-10">
-               <a href="#" className="hover:text-black transition-colors">Methods</a>
-               <a href="#" className="hover:text-black transition-colors">Ethics</a>
-            </div>
+            <p>© 2026 YellowLights.ai // Precision Insight</p>
           </div>
         </div>
       </footer>

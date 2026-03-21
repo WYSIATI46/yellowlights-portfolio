@@ -1030,7 +1030,8 @@ function ScoringStage({
         </table>
       </div>
 
-      <div className="p-4 rounded-xl bg-black/[0.02] border border-black/5">
+      <div className="p-5 rounded-xl bg-black/[0.02] border border-black/5">
+        <p className="text-xs text-zinc-500 mb-3 font-medium">Score each alternative on a 1–10 scale per criterion. Higher scores are better. These scores are weighted by the priority percentages you set in the previous step.</p>
         <div className="flex justify-between text-[10px] mono text-zinc-400 uppercase">
           <span>1-3: Poor</span>
           <span>4-6: Average</span>
@@ -1124,16 +1125,14 @@ function UncertaintyStage({
 
   return (
     <div className="space-y-12">
-      <div className="p-8 bg-[#fbfaf8] rounded-[2rem] flex flex-col items-center text-center border border-black/5">
+      <div className="p-8 bg-white/50 rounded-[2rem] flex flex-col items-center text-center border border-black/5">
         <Brain className="text-yellow-600 mb-6" size={48} />
         <h3 className="serif text-3xl font-black italic mb-4 text-black">Monte Carlo Forecast</h3>
         <p className="text-zinc-500 text-xs max-w-md mb-6 leading-relaxed">
-          Monte Carlo simulation runs thousands of random scenarios within your stated range to estimate the probability distribution of outcomes — giving you a realistic spread, not just a single guess.
+          Monte Carlo simulation runs 10,000 random scenarios between your worst and best case estimates to map the realistic distribution of outcomes — so you see a probability range, not just a single guess.
         </p>
         <p className="text-zinc-500 text-sm max-w-md mb-12">
-          Estimate the range of outcomes for{' '}
-          <span className="text-black font-bold">{topName}</span>. Uses 10,000 triangular
-          distribution simulations.
+          Enter your outcome estimates for <span className="text-black font-bold">{topName}</span> below.
         </p>
 
         {!mcResult && !isComputing && (
@@ -1674,7 +1673,7 @@ function renderMarkdown(text: string): string {
       const content = line.replace(/^\d+\. /, '');
       return `<li class="ml-4 mb-2">${content}</li>`;
     }).join('');
-    return `<ol class="list-decimal ml-4 space-y-2 mt-2 mb-4">${items}</ol>`;
+    return `<ol class="list-decimal ml-4 space-y-2 mt-2 mb-4" start="1">${items}</ol>`;
   });
   // Convert bullet lists — support both * and - bullets, including indented sub-items
   html = html.replace(/((?:^[ \t]*[-*] .+\n?)+)/gm, (block) => {

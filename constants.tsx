@@ -28,21 +28,21 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '1',
     title: 'The Yellow Light: In Praise of the Intentional Pause',
     excerpt: 'In a world calibrated for instant clicks, the most radical design intervention is a deliberate hesitation. Mapping the benefits of "Choice Sludge".',
-    date: 'Feb 12, 2025',
+    date: 'Mar 20, 2026',
     readTime: '11 min read'
   },
   {
     id: '2',
     title: 'Systemic Heuristics in Institutional Logic',
     excerpt: 'How organizations inherit the biases of their founders and architects. A structural analysis of decision-making inheritance.',
-    date: 'Dec 18, 2024',
+    date: 'Mar 20, 2026',
     readTime: '15 min read'
   },
   {
     id: '3',
     title: 'Designing for the Second Thought',
     excerpt: 'Why modern UX is failing human psychology by optimizing exclusively for speed, and how we can re-engineer friction.',
-    date: 'Oct 02, 2024',
+    date: 'Mar 20, 2026',
     readTime: '8 min read'
   }
 ];
