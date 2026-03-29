@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
-  ArrowUpRight, 
+
   Menu, 
   X, 
   Github, 
@@ -181,41 +181,49 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Journal: Intellectual Dispatches */}
-      <section id="journal" className="py-40 px-6 sm:px-12 scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
+      {/* Journal: Card Grid */}
+      <section id="journal" className="py-40 px-6 sm:px-12 scroll-mt-24 bg-[#f5f2ed]">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-32">
             <Brain className="mx-auto mb-10 text-yellow-600" size={40} />
-            <h2 className="serif text-7xl font-black italic tracking-tighter mb-8">Neural Logs.</h2>
+            <h2 className="serif text-7xl font-black italic tracking-tighter mb-8">Journal.</h2>
             <p className="text-xl font-light italic text-zinc-500 leading-relaxed serif max-w-2xl mx-auto">
-              Investigative threads exploring cognitive economics and the mechanics of modern perception.
+              Long-form investigations into the architecture of judgment, choice, and the minds that mapped them
             </p>
           </div>
 
-          <div className="space-y-6">
-            {BLOG_POSTS.map((post) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {BLOG_POSTS.map((post, idx) => (
               <div
                 key={post.id}
-                onClick={() => navigate(`/journal/${
-                  post.id === '1' ? 'yellow-light' :
-                  post.id === '2' ? 'systemic-heuristics' :
-                  'designing-second-thought'
-                }`)}
-                className="glass-card p-12 rounded-[3rem] group cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-12 hover:bg-black/[0.01]"
+                onClick={() => navigate(`/journal/${post.slug}`)}
+                className="cursor-pointer block"
               >
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 text-[10px] mono font-bold uppercase tracking-widest text-zinc-400 mb-6">
-                    <span className="text-yellow-600">{post.date}</span>
-                    <div className="w-1.5 h-1.5 rounded-full bg-black/5"></div>
-                    <span>{post.readTime}</span>
+                <div className="bg-white p-8 rounded-[2.5rem] flex flex-col h-full group border border-black/5 hover:shadow-lg transition-all">
+                  <div className="mb-8 flex justify-between items-start">
+                    <div className="w-14 h-14 bg-black/[0.02] rounded-2xl flex items-center justify-center transition-all group-hover:bg-yellow-500/10 group-hover:rotate-12">
+                      <Brain size={24} className="text-zinc-300 group-hover:text-yellow-600" />
+                    </div>
+                    <span className="mono text-5xl font-black text-black/[0.03] group-hover:text-black/[0.08]">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <h3 className="serif text-4xl font-black italic mb-6 group-hover:text-black transition-colors">{post.title}</h3>
-                  <p className="text-lg font-light text-zinc-500 serif italic line-clamp-2 leading-relaxed">
+                  <div className="flex items-center gap-2 text-[10px] mono font-bold uppercase tracking-widest text-zinc-400 mb-4">
+                    <span className="text-yellow-600">{post.date}</span>
+                  </div>
+                  <h3 className="serif text-2xl font-black italic mb-4 group-hover:text-black transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm font-light text-zinc-500 leading-relaxed mb-8 flex-grow">
                     {post.excerpt}
                   </p>
-                </div>
-                <div className="w-16 h-16 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all shrink-0">
-                  <ArrowUpRight size={24} />
+                  <div className="flex flex-wrap gap-2 pt-6 border-t border-black/5">
+                    {post.tags.map(tag => (
+                      <span key={tag} className="px-4 py-1.5 rounded-full bg-black/5 text-[9px] font-bold uppercase tracking-widest text-zinc-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
