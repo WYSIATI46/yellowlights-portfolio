@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Brain } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import { ARTICLES } from '../articles';
 
 const ArticlePage: React.FC = () => {
@@ -24,48 +25,6 @@ const ArticlePage: React.FC = () => {
       </div>
     );
   }
-
-  // Simple markdown-to-JSX renderer for the article content
-  const renderContent = (content: string) => {
-    return content.split('\n\n').map((block, i) => {
-      if (block.startsWith('## ')) {
-        return <h2 key={i} className="serif text-3xl font-black italic mt-16 mb-6 text-black">{block.replace('## ', '')}</h2>;
-      }
-      if (block.startsWith('**') && block.endsWith('**')) {
-        return <p key={i} className="font-bold text-black mb-4">{block.replace(/\*\*/g, '')}</p>;
-      }
-      // Handle bullet lists
-      if (block.includes('\n- ')) {
-        const items = block.split('\n').filter(l => l.startsWith('- '));
-        return (
-          <ul key={i} className="list-disc pl-6 space-y-2 mb-6 text-zinc-600">
-            {items.map((item, j) => {
-              const text = item.replace('- ', '');
-              // Handle bold within list items
-              const parts = text.split(/\*\*(.*?)\*\*/g);
-              return (
-                <li key={j} className="leading-relaxed">
-                  {parts.map((part, k) => k % 2 === 1 ? <strong key={k} className="text-black">{part}</strong> : part)}
-                </li>
-              );
-            })}
-          </ul>
-        );
-      }
-      // Regular paragraph — handle bold and italic inline
-      const formatted = block
-        .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>');
-      return (
-        <p
-          key={i}
-          className="text-lg font-light text-zinc-600 leading-relaxed mb-6 serif"
-          dangerouslySetInnerHTML={{ __html: formatted }}
-        />
-      );
-    });
-  };
 
   return (
     <div className="min-h-screen bg-[#f5f2ed]">
@@ -104,10 +63,60 @@ const ArticlePage: React.FC = () => {
         <div className="h-px bg-black/5 mb-16"></div>
       </div>
 
-      {/* Article Body */}
+      {/* Article Body — Inter for body, Fraunces (serif) for headings */}
       <article className="px-6 sm:px-12 pb-40">
         <div className="max-w-3xl mx-auto">
-          {renderContent(article.content)}
+          <ReactMarkdown
+            components={{
+              h1: ({ children }) => (
+                <h1 className="serif text-4xl font-black italic mt-16 mb-6 text-black tracking-tight">{children}</h1>
+              ),
+              h2: ({ children }) => (
+                <h2 className="serif text-3xl font-black italic mt-16 mb-6 text-black">{children}</h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className="serif text-2xl font-bold italic mt-12 mb-4 text-black">{children}</h3>
+              ),
+              h4: ({ children }) => (
+                <h4 className="serif text-xl font-bold italic mt-10 mb-3 text-black">{children}</h4>
+              ),
+              p: ({ children }) => (
+                <p className="text-lg font-light text-zinc-600 leading-relaxed mb-6">{children}</p>
+              ),
+              strong: ({ children }) => (
+                <strong className="font-semibold text-black">{children}</strong>
+              ),
+              em: ({ children }) => (
+                <em className="italic">{children}</em>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="border-l-2 border-yellow-500 pl-6 my-8 text-zinc-500 italic">{children}</blockquote>
+              ),
+              ul: ({ children }) => (
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-zinc-600">{children}</ul>
+              ),
+              ol: ({ children }) => (
+                <ol className="list-decimal pl-6 space-y-2 mb-6 text-zinc-600">{children}</ol>
+              ),
+              li: ({ children }) => (
+                <li className="text-lg font-light leading-relaxed">{children}</li>
+              ),
+              a: ({ href, children }) => (
+                <a href={href} className="text-yellow-700 underline underline-offset-2 hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">{children}</a>
+              ),
+              hr: () => (
+                <hr className="my-12 border-black/5" />
+              ),
+              sup: ({ children }) => (
+                <sup className="text-xs text-yellow-700 font-semibold">{children}</sup>
+              ),
+              code: ({ children }) => (
+                <code className="mono text-sm bg-black/5 px-1.5 py-0.5 rounded">{children}</code>
+              ),
+            }}
+          >
+            {article.content}
+          </ReactMarkdown>
         </div>
       </article>
 
