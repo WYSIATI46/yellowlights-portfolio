@@ -68,9 +68,7 @@ const ArticlePage: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <ReactMarkdown
             components={{
-              h1: ({ children }) => (
-                <h1 className="serif text-4xl font-black italic mt-16 mb-6 text-black tracking-tight">{children}</h1>
-              ),
+              h1: () => null, // H1 is already rendered from article metadata above
               h2: ({ children }) => (
                 <h2 className="serif text-3xl font-black italic mt-16 mb-6 text-black">{children}</h2>
               ),
