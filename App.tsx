@@ -6,8 +6,7 @@ import {
 
   Menu, 
   X, 
-  Github, 
-  Twitter, 
+  Twitter,
   Linkedin, 
   Hexagon, 
   Layers, 
@@ -19,6 +18,12 @@ import {
 } from 'lucide-react';
 import { PROJECTS, BLOG_POSTS } from './constants';
 import DecisionLab from './components/DecisionLab';
+
+const SubstackIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+  </svg>
+);
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -258,14 +263,14 @@ const App: React.FC = () => {
                     trace@yellowlights.ai
                   </a>
                   <div className="flex gap-10 pt-4">
-                    <a href="#" className="text-zinc-400 hover:text-black transition-colors cursor-pointer" title="Twitter - Coming Soon">
+                    <a href="https://x.com/YellowlightsAI" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black transition-colors cursor-pointer">
                       <Twitter />
                     </a>
                     <a href="https://www.linkedin.com/in/trace-hancock-3094a24/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black transition-colors cursor-pointer">
                       <Linkedin />
                     </a>
-                    <a href="https://github.com/WYSIATI46" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black transition-colors cursor-pointer">
-                      <Github />
+                    <a href="https://substack.com/@tracehancock" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black transition-colors cursor-pointer">
+                      <SubstackIcon />
                     </a>
                   </div>
                 </div>
