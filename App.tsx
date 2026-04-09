@@ -140,7 +140,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
             <div>
-              <span className="mono text-[10px] font-bold text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Interactive Artifacts // 2024–2026</span>
+              <span className="mono text-[10px] font-bold text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Interactive Artifacts // 2024â2026</span>
               <h2 className="serif text-7xl font-black italic tracking-tighter">Interactive <span className="text-zinc-400">Artifacts.</span></h2>
             </div>
             <div className="max-w-sm text-sm text-zinc-400 leading-relaxed font-light italic">
@@ -153,8 +153,6 @@ const App: React.FC = () => {
               <a
                 key={project.id}
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="cursor-pointer block"
               >
                 <div className="glass-card p-8 rounded-[2.5rem] flex flex-col h-full group">
@@ -293,7 +291,7 @@ const App: React.FC = () => {
               <div className="w-2 h-2 rounded-full bg-yellow-600 pulse-dot"></div>
               <span>Operational: San Francisco, CA</span>
             </div>
-            <p>© 2026 YellowLights.ai // Precision Insight</p>
+            <p>Â© 2026 YellowLights.ai // Precision Insight</p>
           </div>
         </div>
       </footer>
