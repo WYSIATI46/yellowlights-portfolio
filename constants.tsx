@@ -2,24 +2,24 @@
 import { Project, BlogPost } from './types';
 
 export const PROJECTS: Project[] = [
-  { id: 'heuristics-playground', title: 'Heuristics Playground', description: 'Interactive explorer of 20+ mental shortcuts — where they help, where they hurt, and how to deploy them deliberately.', tags: ['Science', 'UI'], link: 'https://yl-app-heuristics-playground.vercel.app' },
-  { id: 'cognitive-mapping-01', title: 'PTCE Visualization Engine', description: 'An interactive periodic table of cognitive biases. Select elements to synthesize archetypes and diagnose real-world decision failures.', tags: ['Science', 'UI'], link: 'https://periodic-table-of-cognitive-element.vercel.app' },
-  { id: 'intuition-duel', title: 'AI vs Human Intuition Duel', description: 'A head-to-head challenge pitting your gut instincts against an AI baseline. Reveals where human intuition excels — and where it reliably fails.', tags: ['Behavioral', 'Science'], link: 'https://yl-app-intuition-duel.vercel.app' },
-  { id: 'bias-scenario-lab', title: 'Bias Scenario Lab', description: 'Experiential simulations engineered to trigger specific cognitive biases. Identify the trap before it closes.', tags: ['Behavioral', 'Science'], link: 'https://yl-app-bias-scenario-lab.vercel.app' },
-  { id: 'judgment-calibrator', title: 'The Judgment Calibrator', description: 'Measures the gap between your confidence and your accuracy. Build the habit of knowing what you know — and what you don\'t.', tags: ['Science', 'Logic'], link: 'https://yl-app-judgment-calibrator.vercel.app' },
-  { id: 'reasoning-coach', title: 'Guided Reasoning Coach', description: 'Walks you through complex problems step by step, surfacing assumptions, alternatives, and blind spots at each stage.', tags: ['Logic', 'Architecture'], link: 'https://yl-app-reasoning-coach.vercel.app' },
-  { id: 'second-opinion', title: 'Second Opinion Simulator', description: 'Generates a structured adversarial perspective on any decision. Forces genuine consideration of the alternative you\'re resisting.', tags: ['Behavioral', 'Logic'], link: 'https://yl-app-second-opinion.vercel.app' },
-  { id: 'tradeoff-visualizer', title: 'Tradeoff Visualizer', description: 'Maps competing values onto a visual landscape, making the real costs of every option visible before you commit.', tags: ['Architecture', 'Logic'], link: 'https://yl-app-tradeoff-visualizer.vercel.app' },
-  { id: 'decision-speed', title: 'Decision Speed Calibrator', description: 'Identifies when you\'re deciding too fast, too slow, or with the wrong deliberation level for the stakes at hand.', tags: ['Behavioral', 'Science'], link: 'https://yl-app-decision-speed.vercel.app' },
-  { id: 'base-rate-finder', title: 'Base Rate Finder', description: 'Surfaces the statistical baseline before any prediction. Counters optimism bias by anchoring judgment in population-level evidence.', tags: ['Science', 'Logic'], link: 'https://yl-app-base-rate-finder.vercel.app' },
-  { id: 'centaur-composer', title: 'Centaur Decision Composer', description: 'Maps which decision sub-tasks belong to human judgment and which belong to algorithmic processing.', tags: ['Architecture', 'AI'], link: 'https://yl-app-centaur-composer.vercel.app' },
-  { id: 'values-compass', title: 'Values Clarification Compass', description: 'Surfaces and ranks your actual values — not the ones you assume you hold — before a high-stakes decision demands you choose.', tags: ['Architecture', 'Behavioral'], link: 'https://yl-app-values-compass.vercel.app' },
-  { id: 'sunk-cost', title: 'Sunk Cost Escape Hatch', description: 'Reframes decisions held hostage by prior investment entirely around future value, severing the anchor of past cost.', tags: ['Behavioral', 'Architecture'], link: 'https://yl-app-sunk-cost.vercel.app' },
-  { id: 'prospect-theory', title: 'Prospect Theory Lab', description: 'Interactive demo of loss aversion and reference dependence. Reveals how your value function systematically distorts choice.', tags: ['Science', 'Behavioral'], link: 'https://yl-app-prospect-theory.vercel.app' },
-  { id: 'signal-noise', title: 'Signal vs. Noise Filter', description: 'Separates meaningful patterns from statistical noise in data, decisions, and incoming information.', tags: ['Science', 'Logic'], link: 'https://yl-app-signal-noise.vercel.app' },
-  { id: 'experiencing-remembering', title: 'Experiencing vs. Remembering Self', description: 'Surfaces the gap between how an experience will feel and how it will be remembered. Design for both selves.', tags: ['Behavioral', 'Architecture'], link: 'https://yl-app-experiencing-remembering.vercel.app' },
-  { id: 'premortem-studio', title: 'Pre-Mortem & Red Team Studio', description: 'Assume the decision has already failed, then reconstruct why — before you\'ve committed and while you can still change course.', tags: ['Logic', 'Architecture'], link: 'https://yl-app-premortem-studio.vercel.app' },
-  { id: 'bayesian-translator', title: 'The Bayesian Translator', description: 'Converts any probability claim into Bayes\' theorem, natural frequencies, and icon arrays. Makes conditional probability intuitive.', tags: ['Science', 'Logic'], link: 'https://yl-app-bayesian-translator.vercel.app' },
+  { id: 'heuristics-playground', title: 'Heuristics Playground', description: 'Interactive explorer of 20+ mental shortcuts â where they help, where they hurt, and how to deploy them deliberately.', tags: ['Science', 'UI'], link: 'https://yellowlights.ai/heuristics-playground/' },
+  { id: 'cognitive-mapping-01', title: 'PTCE Visualization Engine', description: 'An interactive periodic table of cognitive biases. Select elements to synthesize archetypes and diagnose real-world decision failures.', tags: ['Science', 'UI'], link: 'https://yellowlights.ai/periodic-table/' },
+  { id: 'intuition-duel', title: 'AI vs Human Intuition Duel', description: 'A head-to-head challenge pitting your gut instincts against an AI baseline. Reveals where human intuition excels â and where it reliably fails.', tags: ['Behavioral', 'Science'], link: 'https://yellowlights.ai/intuition-duel/' },
+  { id: 'bias-scenario-lab', title: 'Bias Scenario Lab', description: 'Experiential simulations engineered to trigger specific cognitive biases. Identify the trap before it closes.', tags: ['Behavioral', 'Science'], link: 'https://yellowlights.ai/bias-scenario-lab/' },
+  { id: 'judgment-calibrator', title: 'The Judgment Calibrator', description: 'Measures the gap between your confidence and your accuracy. Build the habit of knowing what you know â and what you don\'t.', tags: ['Science', 'Logic'], link: 'https://yellowlights.ai/judgment-calibrator/' },
+  { id: 'reasoning-coach', title: 'Guided Reasoning Coach', description: 'Walks you through complex problems step by step, surfacing assumptions, alternatives, and blind spots at each stage.', tags: ['Logic', 'Architecture'], link: 'https://yellowlights.ai/reasoning-coach/' },
+  { id: 'second-opinion', title: 'Second Opinion Simulator', description: 'Generates a structured adversarial perspective on any decision. Forces genuine consideration of the alternative you\'re resisting.', tags: ['Behavioral', 'Logic'], link: 'https://yellowlights.ai/second-opinion/' },
+  { id: 'tradeoff-visualizer', title: 'Tradeoff Visualizer', description: 'Maps competing values onto a visual landscape, making the real costs of every option visible before you commit.', tags: ['Architecture', 'Logic'], link: 'https://yellowlights.ai/tradeoff-visualizer/' },
+  { id: 'decision-speed', title: 'Decision Speed Calibrator', description: 'Identifies when you\'re deciding too fast, too slow, or with the wrong deliberation level for the stakes at hand.', tags: ['Behavioral', 'Science'], link: 'https://yellowlights.ai/decision-speed/' },
+  { id: 'base-rate-finder', title: 'Base Rate Finder', description: 'Surfaces the statistical baseline before any prediction. Counters optimism bias by anchoring judgment in population-level evidence.', tags: ['Science', 'Logic'], link: 'https://yellowlights.ai/base-rate-finder/' },
+  { id: 'centaur-composer', title: 'Centaur Decision Composer', description: 'Maps which decision sub-tasks belong to human judgment and which belong to algorithmic processing.', tags: ['Architecture', 'AI'], link: 'https://yellowlights.ai/centaur-composer/' },
+  { id: 'values-compass', title: 'Values Clarification Compass', description: 'Surfaces and ranks your actual values â not the ones you assume you hold â before a high-stakes decision demands you choose.', tags: ['Architecture', 'Behavioral'], link: 'https://yellowlights.ai/values-compass/' },
+  { id: 'sunk-cost', title: 'Sunk Cost Escape Hatch', description: 'Reframes decisions held hostage by prior investment entirely around future value, severing the anchor of past cost.', tags: ['Behavioral', 'Architecture'], link: 'https://yellowlights.ai/sunk-cost/' },
+  { id: 'prospect-theory', title: 'Prospect Theory Lab', description: 'Interactive demo of loss aversion and reference dependence. Reveals how your value function systematically distorts choice.', tags: ['Science', 'Behavioral'], link: 'https://yellowlights.ai/prospect-theory/' },
+  { id: 'signal-noise', title: 'Signal vs. Noise Filter', description: 'Separates meaningful patterns from statistical noise in data, decisions, and incoming information.', tags: ['Science', 'Logic'], link: 'https://yellowlights.ai/signal-noise/' },
+  { id: 'experiencing-remembering', title: 'Experiencing vs. Remembering Self', description: 'Surfaces the gap between how an experience will feel and how it will be remembered. Design for both selves.', tags: ['Behavioral', 'Architecture'], link: 'https://yellowlights.ai/experiencing-remembering/' },
+  { id: 'premortem-studio', title: 'Pre-Mortem & Red Team Studio', description: 'Assume the decision has already failed, then reconstruct why â before you\'ve committed and while you can still change course.', tags: ['Logic', 'Architecture'], link: 'https://yellowlights.ai/premortem-studio/' },
+  { id: 'bayesian-translator', title: 'The Bayesian Translator', description: 'Converts any probability claim into Bayes\' theorem, natural frequencies, and icon arrays. Makes conditional probability intuitive.', tags: ['Science', 'Logic'], link: 'https://yellowlights.ai/bayesian-translator/' },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -45,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '3',
     slug: 'systemic-heuristics',
     title: 'Systemic Heuristics in Institutional Logic',
-    excerpt: "Organizations don't just inherit their founders' ideas — they inherit their biases. A structural analysis of how shortcuts become policy.",
+    excerpt: "Organizations don't just inherit their founders' ideas â they inherit their biases. A structural analysis of how shortcuts become policy.",
     date: 'March 2026',
     readTime: '15 min read',
     tags: ['BEHAVIORAL', 'ARCHITECTURE']
@@ -81,7 +81,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '7',
     slug: 'two-minds-one-idea',
     title: 'Two Minds, One Idea: The Collaboration That Rewired How We Think',
-    excerpt: "For a decade, Kahneman and Tversky were inseparable. What they built changed economics, law, and medicine — and how any honest person looks at their own mind.",
+    excerpt: "For a decade, Kahneman and Tversky were inseparable. What they built changed economics, law, and medicine â and how any honest person looks at their own mind.",
     date: 'March 2026',
     readTime: '13 min read',
     tags: ['TRIBUTE', 'SCIENCE']
@@ -90,7 +90,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '8',
     slug: 'running-old-software',
     title: "You're Not Irrational. You're Running Old Software.",
-    excerpt: "Cognitive bias isn't a character flaw. It's an evolutionary mismatch — ancient hardware running in a modern environment.",
+    excerpt: "Cognitive bias isn't a character flaw. It's an evolutionary mismatch â ancient hardware running in a modern environment.",
     date: 'March 2026',
     readTime: '10 min read',
     tags: ['BEHAVIORAL', 'SCIENCE']
@@ -144,7 +144,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '14',
     slug: 'bias-always-bug',
     title: 'Is Bias Always a Bug? The Adaptive Case for Heuristics',
-    excerpt: "The debiasing industry assumes your intuitions are the enemy. Gerd Gigerenzer disagrees — and so does the data.",
+    excerpt: "The debiasing industry assumes your intuitions are the enemy. Gerd Gigerenzer disagrees â and so does the data.",
     date: 'March 2026',
     readTime: '11 min read',
     tags: ['SCIENCE', 'BEHAVIORAL']
@@ -153,7 +153,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: '15',
     slug: 'biased-oracle',
     title: 'The Biased Oracle: What LLMs Get Wrong About Judgment',
-    excerpt: "AI doesn't just inherit human cognitive biases — in key domains, it amplifies them. The question isn't whether to use it. It's how.",
+    excerpt: "AI doesn't just inherit human cognitive biases â in key domains, it amplifies them. The question isn't whether to use it. It's how.",
     date: 'March 2026',
     readTime: '12 min read',
     tags: ['SCIENCE', 'AI']
