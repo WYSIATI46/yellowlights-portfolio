@@ -8,16 +8,175 @@
     }
   },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/periodic-table/:path*",
+      "destination": "https://periodic-table-of-cognitive-element.vercel.app/:path*"
+    },
+    {
+      "source": "/api/periodic-table/:path*",
+      "destination": "https://periodic-table-of-cognitive-element.vercel.app/api/:path*"
+    },
+    {
+      "source": "/heuristics-playground/:path*",
+      "destination": "https://yl-app-heuristics-playground.vercel.app/:path*"
+    },
+    {
+      "source": "/api/heuristics-playground/:path*",
+      "destination": "https://yl-app-heuristics-playground.vercel.app/api/:path*"
+    },
+    {
+      "source": "/intuition-duel/:path*",
+      "destination": "https://yl-app-intuition-duel.vercel.app/:path*"
+    },
+    {
+      "source": "/api/intuition-duel/:path*",
+      "destination": "https://yl-app-intuition-duel.vercel.app/api/:path*"
+    },
+    {
+      "source": "/bias-scenario-lab/:path*",
+      "destination": "https://yl-app-bias-scenario-lab.vercel.app/:path*"
+    },
+    {
+      "source": "/api/bias-scenario-lab/:path*",
+      "destination": "https://yl-app-bias-scenario-lab.vercel.app/api/:path*"
+    },
+    {
+      "source": "/judgment-calibrator/:path*",
+      "destination": "https://yl-app-judgment-calibrator.vercel.app/:path*"
+    },
+    {
+      "source": "/api/judgment-calibrator/:path*",
+      "destination": "https://yl-app-judgment-calibrator.vercel.app/api/:path*"
+    },
+    {
+      "source": "/reasoning-coach/:path*",
+      "destination": "https://yl-app-reasoning-coach.vercel.app/:path*"
+    },
+    {
+      "source": "/api/reasoning-coach/:path*",
+      "destination": "https://yl-app-reasoning-coach.vercel.app/api/:path*"
+    },
+    {
+      "source": "/second-opinion/:path*",
+      "destination": "https://yl-app-second-opinion.vercel.app/:path*"
+    },
+    {
+      "source": "/api/second-opinion/:path*",
+      "destination": "https://yl-app-second-opinion.vercel.app/api/:path*"
+    },
+    {
+      "source": "/tradeoff-visualizer/:path*",
+      "destination": "https://yl-app-tradeoff-visualizer.vercel.app/:path*"
+    },
+    {
+      "source": "/api/tradeoff-visualizer/:path*",
+      "destination": "https://yl-app-tradeoff-visualizer.vercel.app/api/:path*"
+    },
+    {
+      "source": "/decision-speed/:path*",
+      "destination": "https://yl-app-decision-speed.vercel.app/:path*"
+    },
+    {
+      "source": "/api/decision-speed/:path*",
+      "destination": "https://yl-app-decision-speed.vercel.app/api/:path*"
+    },
+    {
+      "source": "/base-rate-finder/:path*",
+      "destination": "https://yl-app-base-rate-finder.vercel.app/:path*"
+    },
+    {
+      "source": "/api/base-rate-finder/:path*",
+      "destination": "https://yl-app-base-rate-finder.vercel.app/api/:path*"
+    },
+    {
+      "source": "/centaur-composer/:path*",
+      "destination": "https://yl-app-centaur-composer.vercel.app/:path*"
+    },
+    {
+      "source": "/api/centaur-composer/:path*",
+      "destination": "https://yl-app-centaur-composer.vercel.app/api/:path*"
+    },
+    {
+      "source": "/values-compass/:path*",
+      "destination": "https://yl-app-values-compass.vercel.app/:path*"
+    },
+    {
+      "source": "/api/values-compass/:path*",
+      "destination": "https://yl-app-values-compass.vercel.app/api/:path*"
+    },
+    {
+      "source": "/sunk-cost/:path*",
+      "destination": "https://yl-app-sunk-cost.vercel.app/:path*"
+    },
+    {
+      "source": "/api/sunk-cost/:path*",
+      "destination": "https://yl-app-sunk-cost.vercel.app/api/:path*"
+    },
+    {
+      "source": "/prospect-theory/:path*",
+      "destination": "https://yl-app-prospect-theory.vercel.app/:path*"
+    },
+    {
+      "source": "/api/prospect-theory/:path*",
+      "destination": "https://yl-app-prospect-theory.vercel.app/api/:path*"
+    },
+    {
+      "source": "/signal-noise/:path*",
+      "destination": "https://yl-app-signal-noise.vercel.app/:path*"
+    },
+    {
+      "source": "/api/signal-noise/:path*",
+      "destination": "https://yl-app-signal-noise.vercel.app/api/:path*"
+    },
+    {
+      "source": "/experiencing-remembering/:path*",
+      "destination": "https://yl-app-experiencing-remembering.vercel.app/:path*"
+    },
+    {
+      "source": "/api/experiencing-remembering/:path*",
+      "destination": "https://yl-app-experiencing-remembering.vercel.app/api/:path*"
+    },
+    {
+      "source": "/premortem-studio/:path*",
+      "destination": "https://yl-app-premortem-studio.vercel.app/:path*"
+    },
+    {
+      "source": "/api/premortem-studio/:path*",
+      "destination": "https://yl-app-premortem-studio.vercel.app/api/:path*"
+    },
+    {
+      "source": "/bayesian-translator/:path*",
+      "destination": "https://yl-app-bayesian-translator.vercel.app/:path*"
+    },
+    {
+      "source": "/api/bayesian-translator/:path*",
+      "destination": "https://yl-app-bayesian-translator.vercel.app/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     }
   ]
