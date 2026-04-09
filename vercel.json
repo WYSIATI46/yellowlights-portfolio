@@ -6,177 +6,203 @@
       "maxDuration": 30
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/periodic-table/:path*",
-      "destination": "https://periodic-table-of-cognitive-element.vercel.app/:path*"
+      "src": "/(.*)",
+      "headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
     },
     {
-      "source": "/api/periodic-table/:path*",
-      "destination": "https://periodic-table-of-cognitive-element.vercel.app/api/:path*"
+      "src": "/periodic-table/(.*)",
+      "dest": "https://periodic-table-of-cognitive-element.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/heuristics-playground/:path*",
-      "destination": "https://yl-app-heuristics-playground.vercel.app/:path*"
+      "src": "/periodic-table",
+      "dest": "https://periodic-table-of-cognitive-element.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/heuristics-playground/:path*",
-      "destination": "https://yl-app-heuristics-playground.vercel.app/api/:path*"
+      "src": "/heuristics-playground/(.*)",
+      "dest": "https://yl-app-heuristics-playground.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/intuition-duel/:path*",
-      "destination": "https://yl-app-intuition-duel.vercel.app/:path*"
+      "src": "/heuristics-playground",
+      "dest": "https://yl-app-heuristics-playground.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/intuition-duel/:path*",
-      "destination": "https://yl-app-intuition-duel.vercel.app/api/:path*"
+      "src": "/intuition-duel/(.*)",
+      "dest": "https://yl-app-intuition-duel.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/bias-scenario-lab/:path*",
-      "destination": "https://yl-app-bias-scenario-lab.vercel.app/:path*"
+      "src": "/intuition-duel",
+      "dest": "https://yl-app-intuition-duel.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/bias-scenario-lab/:path*",
-      "destination": "https://yl-app-bias-scenario-lab.vercel.app/api/:path*"
+      "src": "/bias-scenario-lab/(.*)",
+      "dest": "https://yl-app-bias-scenario-lab.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/judgment-calibrator/:path*",
-      "destination": "https://yl-app-judgment-calibrator.vercel.app/:path*"
+      "src": "/bias-scenario-lab",
+      "dest": "https://yl-app-bias-scenario-lab.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/judgment-calibrator/:path*",
-      "destination": "https://yl-app-judgment-calibrator.vercel.app/api/:path*"
+      "src": "/judgment-calibrator/(.*)",
+      "dest": "https://yl-app-judgment-calibrator.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/reasoning-coach/:path*",
-      "destination": "https://yl-app-reasoning-coach.vercel.app/:path*"
+      "src": "/judgment-calibrator",
+      "dest": "https://yl-app-judgment-calibrator.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/reasoning-coach/:path*",
-      "destination": "https://yl-app-reasoning-coach.vercel.app/api/:path*"
+      "src": "/reasoning-coach/(.*)",
+      "dest": "https://yl-app-reasoning-coach.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/second-opinion/:path*",
-      "destination": "https://yl-app-second-opinion.vercel.app/:path*"
+      "src": "/reasoning-coach",
+      "dest": "https://yl-app-reasoning-coach.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/second-opinion/:path*",
-      "destination": "https://yl-app-second-opinion.vercel.app/api/:path*"
+      "src": "/second-opinion/(.*)",
+      "dest": "https://yl-app-second-opinion.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/tradeoff-visualizer/:path*",
-      "destination": "https://yl-app-tradeoff-visualizer.vercel.app/:path*"
+      "src": "/second-opinion",
+      "dest": "https://yl-app-second-opinion.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/tradeoff-visualizer/:path*",
-      "destination": "https://yl-app-tradeoff-visualizer.vercel.app/api/:path*"
+      "src": "/tradeoff-visualizer/(.*)",
+      "dest": "https://yl-app-tradeoff-visualizer.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/decision-speed/:path*",
-      "destination": "https://yl-app-decision-speed.vercel.app/:path*"
+      "src": "/tradeoff-visualizer",
+      "dest": "https://yl-app-tradeoff-visualizer.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/decision-speed/:path*",
-      "destination": "https://yl-app-decision-speed.vercel.app/api/:path*"
+      "src": "/decision-speed/(.*)",
+      "dest": "https://yl-app-decision-speed.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/base-rate-finder/:path*",
-      "destination": "https://yl-app-base-rate-finder.vercel.app/:path*"
+      "src": "/decision-speed",
+      "dest": "https://yl-app-decision-speed.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/base-rate-finder/:path*",
-      "destination": "https://yl-app-base-rate-finder.vercel.app/api/:path*"
+      "src": "/base-rate-finder/(.*)",
+      "dest": "https://yl-app-base-rate-finder.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/centaur-composer/:path*",
-      "destination": "https://yl-app-centaur-composer.vercel.app/:path*"
+      "src": "/base-rate-finder",
+      "dest": "https://yl-app-base-rate-finder.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/centaur-composer/:path*",
-      "destination": "https://yl-app-centaur-composer.vercel.app/api/:path*"
+      "src": "/centaur-composer/(.*)",
+      "dest": "https://yl-app-centaur-composer.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/values-compass/:path*",
-      "destination": "https://yl-app-values-compass.vercel.app/:path*"
+      "src": "/centaur-composer",
+      "dest": "https://yl-app-centaur-composer.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/values-compass/:path*",
-      "destination": "https://yl-app-values-compass.vercel.app/api/:path*"
+      "src": "/values-compass/(.*)",
+      "dest": "https://yl-app-values-compass.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/sunk-cost/:path*",
-      "destination": "https://yl-app-sunk-cost.vercel.app/:path*"
+      "src": "/values-compass",
+      "dest": "https://yl-app-values-compass.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/sunk-cost/:path*",
-      "destination": "https://yl-app-sunk-cost.vercel.app/api/:path*"
+      "src": "/sunk-cost/(.*)",
+      "dest": "https://yl-app-sunk-cost.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/prospect-theory/:path*",
-      "destination": "https://yl-app-prospect-theory.vercel.app/:path*"
+      "src": "/sunk-cost",
+      "dest": "https://yl-app-sunk-cost.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/prospect-theory/:path*",
-      "destination": "https://yl-app-prospect-theory.vercel.app/api/:path*"
+      "src": "/prospect-theory/(.*)",
+      "dest": "https://yl-app-prospect-theory.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/signal-noise/:path*",
-      "destination": "https://yl-app-signal-noise.vercel.app/:path*"
+      "src": "/prospect-theory",
+      "dest": "https://yl-app-prospect-theory.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/signal-noise/:path*",
-      "destination": "https://yl-app-signal-noise.vercel.app/api/:path*"
+      "src": "/signal-noise/(.*)",
+      "dest": "https://yl-app-signal-noise.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/experiencing-remembering/:path*",
-      "destination": "https://yl-app-experiencing-remembering.vercel.app/:path*"
+      "src": "/signal-noise",
+      "dest": "https://yl-app-signal-noise.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/experiencing-remembering/:path*",
-      "destination": "https://yl-app-experiencing-remembering.vercel.app/api/:path*"
+      "src": "/experiencing-remembering/(.*)",
+      "dest": "https://yl-app-experiencing-remembering.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/premortem-studio/:path*",
-      "destination": "https://yl-app-premortem-studio.vercel.app/:path*"
+      "src": "/experiencing-remembering",
+      "dest": "https://yl-app-experiencing-remembering.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/premortem-studio/:path*",
-      "destination": "https://yl-app-premortem-studio.vercel.app/api/:path*"
+      "src": "/premortem-studio/(.*)",
+      "dest": "https://yl-app-premortem-studio.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/bayesian-translator/:path*",
-      "destination": "https://yl-app-bayesian-translator.vercel.app/:path*"
+      "src": "/premortem-studio",
+      "dest": "https://yl-app-premortem-studio.vercel.app/",
+      "check": true
     },
     {
-      "source": "/api/bayesian-translator/:path*",
-      "destination": "https://yl-app-bayesian-translator.vercel.app/api/:path*"
+      "src": "/bayesian-translator/(.*)",
+      "dest": "https://yl-app-bayesian-translator.vercel.app/$1",
+      "check": true
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
+      "src": "/bayesian-translator",
+      "dest": "https://yl-app-bayesian-translator.vercel.app/",
+      "check": true
+    },
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
-      ]
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
