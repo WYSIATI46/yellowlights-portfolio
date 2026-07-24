@@ -1,7 +1,5 @@
 # The Rabble-Rouser Who Made Economics Human: A Portrait of Richard Thaler
 
-*He kept a chalkboard nobody else could read. Four decades later, it earned him a Nobel Prize.*
-
 ## Opening: A blackboard nobody else could read
 
 There is a particular kind of loneliness in being the only person in the room who thinks the interesting thing just happened. In the late 1970s, in a cramped office at the University of Rochester, a young economist named Richard Thaler kept a chalkboard that colleagues found faintly embarrassing. On it he scrawled a growing list of things people actually did that economic theory said they shouldn't: refusing to sell a coffee mug for more than they'd paid for it, throwing good money after bad at the racetrack, finishing a terrible restaurant meal because they'd already paid the check. Thaler called them anomalies, a polite word for what his more orthodox colleagues privately considered errors in his data, or worse, errors in his thinking.[^1][^2]
