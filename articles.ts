@@ -14,6 +14,11 @@ import foxesHedgehogs from './articles/foxes-hedgehogs.md?raw';
 import biasAlwaysBug from './articles/bias-always-bug.md?raw';
 import biasedOracle from './articles/biased-oracle.md?raw';
 import decisionHygiene from './articles/decision-hygiene.md?raw';
+import rabbleRouserThaler from './articles/rabble-rouser-thaler.md?raw';
+import mostCitedManSunstein from './articles/most-cited-man-sunstein.md?raw';
+import michaelLewis from './articles/michael-lewis.md?raw';
+import writtenOnTheLine from './articles/written-on-the-line.md?raw';
+import failureToDisagree from './articles/failure-to-disagree.md?raw';
 
 export interface Article {
   id: string;
@@ -169,5 +174,50 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: decisionHygiene,
+  },
+  {
+    id: '17',
+    slug: 'rabble-rouser-thaler',
+    title: 'The Rabble-Rouser Who Made Economics Human: A Portrait of Richard Thaler',
+    subtitle: "He kept a chalkboard nobody else could read. Four decades later, it earned him a Nobel Prize.",
+    date: 'July 2026',
+    readTime: '10 min read',
+    content: rabbleRouserThaler,
+  },
+  {
+    id: '18',
+    slug: 'most-cited-man-sunstein',
+    title: 'The Most Cited Man in Law: A Portrait of Cass Sunstein',
+    subtitle: "He's the most frequently cited legal scholar in America. The real question is whether there's anything he hasn't written about.",
+    date: 'July 2026',
+    readTime: '9 min read',
+    content: mostCitedManSunstein,
+  },
+  {
+    id: '19',
+    slug: 'michael-lewis',
+    title: 'The Man Who Explained Us to Ourselves: A Portrait of Michael Lewis',
+    subtitle: "A review he didn't like led him, eight years and one unlikely friendship later, to write the truest book of his career.",
+    date: 'July 2026',
+    readTime: '15 min read',
+    content: michaelLewis,
+  },
+  {
+    id: '20',
+    slug: 'written-on-the-line',
+    title: 'Written on the Line: A History of Naturalistic Decision-Making',
+    subtitle: "They stopped trusting the lab and started watching firefighters instead. Four decades later, it changed how armies, hospitals, and cockpits train their people.",
+    date: 'July 2026',
+    readTime: '13 min read',
+    content: writtenOnTheLine,
+  },
+  {
+    id: '21',
+    slug: 'failure-to-disagree',
+    title: 'The Failure to Disagree: How Two Rival Schools of Decision Science Found Common Ground',
+    subtitle: "Two camps spent decades talking past each other. Then they wrote a paper together and, to their own surprise, couldn't find a fight worth having.",
+    date: 'July 2026',
+    readTime: '13 min read',
+    content: failureToDisagree,
   },
 ];
