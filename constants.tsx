@@ -1,4 +1,3 @@
-
 import { Project, BlogPost } from './types';
 
 export const PROJECTS: Project[] = [
@@ -166,5 +165,41 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'March 2026',
     readTime: '11 min read',
     tags: ['ARCHITECTURE', 'LOGIC']
-  }
+  },
+  {
+    id: '17',
+    slug: 'rabble-rouser-thaler',
+    title: 'The Rabble-Rouser Who Made Economics Human: A Portrait of Richard Thaler',
+    excerpt: 'He kept a chalkboard nobody else could read. Four decades later, it earned him a Nobel Prize.',
+    date: 'July 2026',
+    readTime: '10 min read',
+    tags: ['HISTORY', 'BEHAVIORAL']
+  },
+  {
+    id: '18',
+    slug: 'most-cited-man-sunstein',
+    title: 'The Most Cited Man in Law: A Portrait of Cass Sunstein',
+    excerpt: "He's the most frequently cited legal scholar in America. The real question is whether there's anything he hasn't written about.",
+    date: 'July 2026',
+    readTime: '9 min read',
+    tags: ['HISTORY', 'SCIENCE']
+  },
+  {
+    id: '19',
+    slug: 'michael-lewis',
+    title: 'The Man Who Explained Us to Ourselves: A Portrait of Michael Lewis',
+    excerpt: "A review he didn't like led him, eight years and one unlikely friendship later, to write the truest book of his career.",
+    date: 'July 2026',
+    readTime: '15 min read',
+    tags: ['HISTORY', 'BEHAVIORAL']
+  },
+  {
+    id: '20',
+    slug: 'failure-to-disagree',
+    title: 'The Failure to Disagree: How Two Rival Schools of Decision Science Found Common Ground',
+    excerpt: "Two camps spent decades talking past each other. Then they wrote a paper together and, to their own surprise, couldn't find a fight worth having.",
+    date: 'July 2026',
+    readTime: '13 min read',
+    tags: ['BEHAVIORAL', 'SCIENCE']
+  },
 ];
