@@ -1,7 +1,5 @@
 # The Failure to Disagree: How Two Rival Schools of Decision Science Found Common Ground
 
-*Two camps spent decades talking past each other. Then they wrote a paper together and, to their own surprise, couldn't find a fight worth having.*
-
 ## Opening: A fight that never quite happened
 
 Academic rivalries usually announce themselves loudly. Two camps stake out opposing positions, trade papers like artillery fire, and the field spends a decade picking sides. Something stranger happened in 2009, when Daniel Kahneman, the psychologist whose work on heuristics and biases had spent thirty years cataloging the ways human judgment goes wrong, sat down to write a joint paper with Gary Klein, a psychologist whose entire career had been built on documenting how firefighters, nurses, and battlefield commanders get it remarkably right using nothing but gut instinct. Two scholars, two decades of talking past each other, one paper. Its title told you everything before you read a word: "Conditions for Intuitive Expertise: A Failure to Disagree."[^1]
