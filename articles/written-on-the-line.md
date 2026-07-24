@@ -1,7 +1,5 @@
 # Written on the Line: A History of Naturalistic Decision-Making
 
-*They stopped trusting the lab and started watching firefighters instead. Four decades later, it changed how armies, hospitals, and cockpits train their people.*
-
 ## Opening: The workshop nobody wanted to attend
 
 In 1989, the U.S. Army Research Institute had a problem nobody in the psychology establishment particularly wanted to solve. For decades, the reigning model of decision-making, the one taught in business schools and baked into military doctrine, assumed that a good decision-maker generates a set of options, weighs the costs and benefits of each, and selects the one with the highest expected value. It's an elegant model. It is also, as an Army psychologist named Judith Orasanu had begun to suspect, almost completely disconnected from how anyone actually makes decisions when the building is on fire, the enemy is close, or the patient's blood pressure is crashing.[^1][^2]
