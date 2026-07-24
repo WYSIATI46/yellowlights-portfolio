@@ -1,7 +1,5 @@
 # The Man Who Explained Us to Ourselves: A Portrait of Michael Lewis
 
-*A review he didn't like led him, eight years and one unlikely friendship later, to write the truest book of his career.*
-
 ## Opening: A review that stung
 
 Most writers get bad reviews and move on. Michael Lewis got a review of *Moneyball* in 2003 that didn't attack his prose or his facts, but told him he didn't fully understand his own book, and he couldn't shake it for years. The review came from an economist named Richard Thaler and a legal scholar named Cass Sunstein, and their complaint was oddly specific: the scouting biases Lewis had spent a whole book documenting, the tendency of baseball insiders to overvalue a player's jawline and undervalue his on-base percentage, weren't just baseball quirks. They were cognitive biases, first identified decades earlier by two Israeli psychologists named Amos Tversky and Daniel Kahneman.[^1] Lewis had never heard either name. "I thought, 'My God, how'd I miss that?'" he later admitted. "I never asked the next question, why? What's going on in the mind? It hadn't even occurred to me that anybody ever had."[^1]
