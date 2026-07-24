@@ -1,7 +1,5 @@
 # The Most Cited Man in Law: A Portrait of Cass Sunstein
 
-*He's the most frequently cited legal scholar in America. The real question is whether there's anything he hasn't written about.*
-
 ## Opening: A number named after him
 
 There's a peculiar kind of fame reserved for scholars who are cited so often, by so many people, that someone eventually turns the citation itself into a joke. In 2007, the legal journal *The Green Bag* coined the "Sunstein number," a tongue-in-cheek measure of how many degrees of separation separated any legal academic from Cass Sunstein, an homage to the Erdő s number mathematicians use to track collaborative distance from a famously prolific colleague. By 2014, studies of legal citations found Sunstein to be the most frequently cited legal scholar in America, and it wasn't especially close.[^1]
