@@ -88,7 +88,8 @@ const App: React.FC = () => {
               </h1>
               <div className="max-w-2xl pl-12 border-l-2 border-black/5">
                 <p className="text-2xl md:text-3xl font-light text-zinc-500 leading-relaxed serif italic">
-                  Mapping the invisible architecture of judgment. Trace Hancock builds analytical frameworks to stabilize high-stakes decision cycles.
+                  <span className="block">Mapping the invisible architecture of judgment.</span>
+                  <span className="block">Tools for clearer thinking and better decisions in an age of artificial intelligence.</span>
                 </p>
               </div>
               
