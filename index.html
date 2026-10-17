@@ -86,6 +86,25 @@
         ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
 
+        .audio-progress::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+            border: 3px solid #f8f5ef;
+            border-radius: 9999px;
+            background: #27272a;
+            box-shadow: 0 0 0 1px rgba(39, 39, 42, 0.15);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .audio-progress::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border: 3px solid #f8f5ef;
+            border-radius: 9999px;
+            background: #27272a;
+            box-shadow: 0 0 0 1px rgba(39, 39, 42, 0.15);
+        }
+
         /* Print Styles - memo only */
         @media print {
             body * { visibility: hidden !important; }

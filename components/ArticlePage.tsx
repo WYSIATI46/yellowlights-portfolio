@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Brain } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { ARTICLES } from '../articles';
+import ArticleAudioPlayer from './ArticleAudioPlayer';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -55,6 +56,7 @@ const ArticlePage: React.FC = () => {
           <p className="text-xl font-light italic text-zinc-500 leading-relaxed serif border-l-2 border-yellow-500 pl-6">
             {article.subtitle}
           </p>
+          {article.audio && <ArticleAudioPlayer {...article.audio} />}
         </div>
       </header>
 

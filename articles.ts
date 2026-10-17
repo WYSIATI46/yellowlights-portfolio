@@ -27,6 +27,12 @@ export interface Article {
   date: string;
   readTime: string;
   content: string;
+  audio?: {
+    title: string;
+    url: string;
+    downloadUrl: string;
+    durationSeconds: number;
+  };
 }
 
 export const ARTICLES: Article[] = [
@@ -182,6 +188,12 @@ export const ARTICLES: Article[] = [
     date: 'July 2026',
     readTime: '10 min read',
     content: rabbleRouserThaler,
+    audio: {
+      title: 'How Richard Thaler Made Economics Human',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/Thaler_Audio_Journal_Pilot_96k_complete.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/Thaler_Audio_Journal_Pilot_96k_complete.m4a?download=1',
+      durationSeconds: 22 * 60 + 19,
+    },
   },
   {
     id: '18',
