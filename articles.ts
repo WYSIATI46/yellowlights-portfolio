@@ -80,6 +80,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '12 min read',
     content: soldierMappedMind,
+    audio: {
+      title: 'The Soldier Who Decoded Human Risk',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/The_soldier_who_decoded_human_risk_96k-YGXgycRGaWZlkskoCBx6jhGJhQbU70.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/The_soldier_who_decoded_human_risk_96k-YGXgycRGaWZlkskoCBx6jhGJhQbU70.m4a?download=1',
+      durationSeconds: 1341.41678,
+    },
   },
   {
     id: '6',
@@ -89,6 +95,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '12 min read',
     content: mindBehindMirror,
+    audio: {
+      title: 'How Daniel Kahneman Designed His Final Act',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Daniel_Kahneman_designed_his_final_act_96k-konU7Bvn1I21xrdDBNQVuRlswDTMnV.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Daniel_Kahneman_designed_his_final_act_96k-konU7Bvn1I21xrdDBNQVuRlswDTMnV.m4a?download=1',
+      durationSeconds: 1347.570068,
+    },
   },
   {
     id: '7',
@@ -98,6 +110,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '13 min read',
     content: twoMindsOneIdea,
+    audio: {
+      title: 'How Two Clashing Minds Mapped Human Irrationality',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Two_Clashing_Minds_Mapped_Human_Irrationality_96k-vqk2fZetmqphVJfVcoS3albmsVy9hG.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Two_Clashing_Minds_Mapped_Human_Irrationality_96k-vqk2fZetmqphVJfVcoS3albmsVy9hG.m4a?download=1',
+      durationSeconds: 1435.689796,
+    },
   },
   {
     id: '8',
@@ -107,6 +125,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '10 min read',
     content: runningOldSoftware,
+    audio: {
+      title: 'Your Brain Is Optimized for the Past',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Your_brain_is_optimized_for_the_past_96k-8Wikciz0RXvFF9RUT7G4DpGxIk1Nlu.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Your_brain_is_optimized_for_the_past_96k-8Wikciz0RXvFF9RUT7G4DpGxIk1Nlu.m4a?download=1',
+      durationSeconds: 1325.209252,
+    },
   },
   {
     id: '9',
@@ -161,6 +185,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: biasAlwaysBug,
+    audio: {
+      title: 'Your Biases Are Features, Not Bugs',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Your_Biases_Are_Features_Not_Bugs_96k-Tx0S8C4n8W8nKXMmo35xMGXpnuAH93.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Your_Biases_Are_Features_Not_Bugs_96k-Tx0S8C4n8W8nKXMmo35xMGXpnuAH93.m4a?download=1',
+      durationSeconds: 1504.281542,
+    },
   },
   {
     id: '15',
@@ -170,6 +200,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '12 min read',
     content: biasedOracle,
+    audio: {
+      title: 'Why AI Is a Sycophantic Yes-Man',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_AI_is_a_sycophantic_yes-man_96k-bmMS7wNiiGpfMEbr7VQATgxMT1BIrE.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_AI_is_a_sycophantic_yes-man_96k-bmMS7wNiiGpfMEbr7VQATgxMT1BIrE.m4a?download=1',
+      durationSeconds: 1326.370249,
+    },
   },
   {
     id: '16',
@@ -179,6 +215,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: decisionHygiene,
+    audio: {
+      title: 'Why Decision Hygiene Beats Gut Instinct',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Decision_Hygiene_Beats_Gut_Instinct_96k-4RvuJCYRSOlVcI2ezRLruVeUOFOGoe.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Decision_Hygiene_Beats_Gut_Instinct_96k-4RvuJCYRSOlVcI2ezRLruVeUOFOGoe.m4a?download=1',
+      durationSeconds: 1560.288073,
+    },
   },
   {
     id: '17',
@@ -203,6 +245,12 @@ export const ARTICLES: Article[] = [
     date: 'July 2026',
     readTime: '9 min read',
     content: mostCitedManSunstein,
+    audio: {
+      title: 'Cass Sunstein and the Architecture of Choice',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Cass_Sunstein_and_the_Architecture_of_Choice_96k-n156xlNHLDQsEU61WzDavNF8sechYm.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Cass_Sunstein_and_the_Architecture_of_Choice_96k-n156xlNHLDQsEU61WzDavNF8sechYm.m4a?download=1',
+      durationSeconds: 1277.120726,
+    },
   },
   {
     id: '19',
@@ -212,6 +260,12 @@ export const ARTICLES: Article[] = [
     date: 'July 2026',
     readTime: '15 min read',
     content: michaelLewis,
+    audio: {
+      title: 'The Storytelling Blind Spot of Michael Lewis',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/The_storytelling_blind_spot_of_Michael_Lewis_96k-j59ZBbMaBS1F9inMavwo6VCzeayWn8.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/The_storytelling_blind_spot_of_Michael_Lewis_96k-j59ZBbMaBS1F9inMavwo6VCzeayWn8.m4a?download=1',
+      durationSeconds: 1374.923175,
+    },
   },
   {
     id: '20',
@@ -221,5 +275,11 @@ export const ARTICLES: Article[] = [
     date: 'July 2026',
     readTime: '13 min read',
     content: failureToDisagree,
+    audio: {
+      title: 'Trusting Intuition in Wicked Environments',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Trusting_intuition_in_wicked_environments_96k-FoHpQVu1Riqgqt3RAxL1rwwdUIILR0.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Trusting_intuition_in_wicked_environments_96k-FoHpQVu1Riqgqt3RAxL1rwwdUIILR0.m4a?download=1',
+      durationSeconds: 1482.036825,
+    },
   },
 ];
