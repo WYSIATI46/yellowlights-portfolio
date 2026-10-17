@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Download, Headphones, Pause, Play } from 'lucide-react';
+import { Download, Headphones, Pause, Play, RotateCcw } from 'lucide-react';
 
 interface ArticleAudioPlayerProps {
   title: string;
@@ -70,7 +70,7 @@ const ArticleAudioPlayer: React.FC<ArticleAudioPlayerProps> = ({
 
   const handleTogglePlayback = async () => {
     const audio = audioRef.current;
-    if (!audio || error) return;
+    if (!audio) return;
 
     if (!audio.paused) {
       audio.pause();
@@ -83,6 +83,24 @@ const ArticleAudioPlayer: React.FC<ArticleAudioPlayerProps> = ({
     } catch {
       setIsLoading(false);
       setError('Playback could not start. Please try again or download the audio.');
+    }
+  };
+
+  const handleRetry = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    setError(null);
+    setIsLoading(true);
+    setBuffered(0);
+    audio.load();
+    audio.playbackRate = playbackRate;
+
+    try {
+      await audio.play();
+    } catch {
+      setIsLoading(false);
+      setError('Playback is still unavailable. Please try again or download the audio.');
     }
   };
 
@@ -155,12 +173,17 @@ const ArticleAudioPlayer: React.FC<ArticleAudioPlayerProps> = ({
       <div className="mt-6 grid grid-cols-[3.5rem_minmax(0,1fr)] items-center gap-x-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-x-5">
         <button
           type="button"
-          onClick={handleTogglePlayback}
-          disabled={Boolean(error)}
-          aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
-          className="row-span-2 flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-white transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f5ef] disabled:cursor-not-allowed disabled:opacity-50 sm:h-16 sm:w-16"
+          onClick={error ? handleRetry : handleTogglePlayback}
+          aria-label={error ? 'Retry audio' : isPlaying ? 'Pause audio' : 'Play audio'}
+          className="row-span-2 flex h-14 w-14 items-center justify-center rounded-full bg-zinc-800 text-white transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f5ef] sm:h-16 sm:w-16"
         >
-          {isPlaying ? <Pause aria-hidden="true" size={24} fill="currentColor" /> : <Play aria-hidden="true" size={24} fill="currentColor" className="ml-0.5" />}
+          {error ? (
+            <RotateCcw aria-hidden="true" size={24} />
+          ) : isPlaying ? (
+            <Pause aria-hidden="true" size={24} fill="currentColor" />
+          ) : (
+            <Play aria-hidden="true" size={24} fill="currentColor" className="ml-0.5" />
+          )}
         </button>
 
         <input
@@ -197,7 +220,11 @@ const ArticleAudioPlayer: React.FC<ArticleAudioPlayerProps> = ({
         </div>
       </div>
 
-      {error && <p role="alert" className="mt-4 text-sm text-red-700">{error}</p>}
+      {error && (
+        <p role="alert" className="mt-4 text-sm text-red-700">
+          {error} Use the Retry button to reload the audio.
+        </p>
+      )}
 
       <div className="mt-7 flex flex-col gap-4 border-t border-[#ded7cb] pt-5 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
         <span>AI-generated audio overview</span>
