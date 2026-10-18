@@ -53,6 +53,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '15 min read',
     content: systemicHeuristics,
+    audio: {
+      title: 'How Institutional Autopilot Blinds Companies',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Institutional_Autopilot_Blinds_Companies_96k-5L4vpivyKgQ10DR0tjYW5bzXG8IK6V.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Institutional_Autopilot_Blinds_Companies_96k-5L4vpivyKgQ10DR0tjYW5bzXG8IK6V.m4a?download=1',
+      durationSeconds: 1489.72263,
+    },
   },
   {
     id: '3',
@@ -62,6 +68,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '8 min read',
     content: designingSecondThought,
+    audio: {
+      title: 'Why Frictionless Design Makes You Miserable',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Frictionless_Design_Makes_You_Miserable_96k-X8pb47qH2iq7hfGOg0wIYHDR5Pytoy.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Frictionless_Design_Makes_You_Miserable_96k-X8pb47qH2iq7hfGOg0wIYHDR5Pytoy.m4a?download=1',
+      durationSeconds: 1409.799546,
+    },
   },
   {
     id: '4',
@@ -71,6 +83,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '14 min read',
     content: architectsOfJudgment,
+    audio: {
+      title: 'Human Judgment from Aristotle to AI',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Human_judgment_from_Aristotle_to_AI_96k-vSW81gYzpMZE9qOT2jc19F5xYg2lLP.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Human_judgment_from_Aristotle_to_AI_96k-vSW81gYzpMZE9qOT2jc19F5xYg2lLP.m4a?download=1',
+      durationSeconds: 1456.123356,
+    },
   },
   {
     id: '5',
@@ -140,6 +158,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '10 min read',
     content: speedTrap,
+    audio: {
+      title: 'Why Rushing Destroys Good Decisions',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Rushing_Destroys_Good_Decisions_96k-epCfXlkFlzy6D95O8VoYn9Chg9ATPv.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Rushing_Destroys_Good_Decisions_96k-epCfXlkFlzy6D95O8VoYn9Chg9ATPv.m4a?download=1',
+      durationSeconds: 1164.294966,
+    },
   },
   {
     id: '10',
@@ -149,6 +173,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: confidenceNotAccuracy,
+    audio: {
+      title: "Why Confidence Doesn't Mean You're Right",
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Confidence_Doesn_t_Mean_You_re_Right_96k-SZZarbe9TPPRIKkiai0vWOELeNV4XS.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_Confidence_Doesn_t_Mean_You_re_Right_96k-SZZarbe9TPPRIKkiai0vWOELeNV4XS.m4a?download=1',
+      durationSeconds: 1436.897234,
+    },
   },
   {
     id: '11',
@@ -158,6 +188,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '10 min read',
     content: preDecision,
+    audio: {
+      title: 'How Pre-Decisions Dictate Your Choices',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Pre-Decisions_Dictate_Your_Choices_96k-O5HIJeaxbgxOGXdyW6xezpNatLZpYn.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Pre-Decisions_Dictate_Your_Choices_96k-O5HIJeaxbgxOGXdyW6xezpNatLZpYn.m4a?download=1',
+      durationSeconds: 1442.400363,
+    },
   },
   {
     id: '12',
@@ -167,6 +203,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: noiseNotHearing,
+    audio: {
+      title: 'How Noise Distorts Human Decisions',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Noise_Distorts_Human_Decisions_96k-cTu93BFgWVqcmKkcoWOPd49jx3kDai.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Noise_Distorts_Human_Decisions_96k-cTu93BFgWVqcmKkcoWOPd49jx3kDai.m4a?download=1',
+      durationSeconds: 1386.997551,
+    },
   },
   {
     id: '13',
@@ -176,6 +218,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: foxesHedgehogs,
+    audio: {
+      title: 'How Superforecasters Beat the Experts',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Superforecasters_Beat_the_Experts_96k-tQUiqkcRDUrSMbeFGvRNxTmm4Gpm2x.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Superforecasters_Beat_the_Experts_96k-tQUiqkcRDUrSMbeFGvRNxTmm4Gpm2x.m4a?download=1',
+      durationSeconds: 1433.205261,
+    },
   },
   {
     id: '14',
