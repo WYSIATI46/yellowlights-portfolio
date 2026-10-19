@@ -44,6 +44,12 @@ export const ARTICLES: Article[] = [
     date: 'March 2026',
     readTime: '11 min read',
     content: yellowLight,
+    audio: {
+      title: 'How Frictionless Design Triggers Instant Regret',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_frictionless_design_triggers_instant_regret_96k-Yzu1ztVeEB0lhNOus37Ehx1xGknnyr.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_frictionless_design_triggers_instant_regret_96k-Yzu1ztVeEB0lhNOus37Ehx1xGknnyr.m4a?download=1',
+      durationSeconds: 1248.281542,
+    },
   },
   {
     id: '2',
