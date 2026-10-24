@@ -245,11 +245,21 @@ const App: React.FC = () => {
               </h2>
               <div className="space-y-10 text-2xl font-light italic leading-relaxed text-zinc-500 serif">
                 <p>
-                  Trace Hancock is a decision consultant and analytical scientist specializing in cognitive stabilization.
+                  Trace Hancock is the creator of Yellowlights.ai, a project at the intersection of behavioral science, data visualization, and human judgment.
                 </p>
                 <p>
-                  He deconstructs high-stakes choice architecture into structural frameworks, helping organizations navigate the boundary between intuition and data.
+                  After years helping organizations make sense of complex information, he became interested in a harder question: Why doesn't better information always lead to better decisions?
                 </p>
+                <p>
+                  Yellowlights.ai explores that gap through essays and interactive tools designed to strengthen human judgment, not replace it.
+                </p>
+                <a
+                  href="/journal/relevance-an-unfinished-education"
+                  className="inline-flex items-center gap-2 text-sm font-bold not-italic uppercase tracking-[0.12em] text-yellow-700 hover:text-zinc-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-4"
+                >
+                  Read the story behind Yellowlights.ai
+                  <ArrowRight size={16} aria-hidden="true" />
+                </a>
               </div>
             </div>
 
