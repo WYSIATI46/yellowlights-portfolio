@@ -1,3 +1,4 @@
+import relevance from './articles/relevance-an-unfinished-education.md?raw';
 import yellowLight from './articles/yellow-light.md?raw';
 import systemicHeuristics from './articles/systemic-heuristics.md?raw';
 import designingSecondThought from './articles/designing-second-thought.md?raw';
@@ -36,6 +37,21 @@ export interface Article {
 }
 
 export const ARTICLES: Article[] = [
+  {
+    id: '21',
+    slug: 'relevance-an-unfinished-education',
+    title: 'Relevance: An Unfinished Education',
+    subtitle: 'The unlikely journey from working-class Portland to behavioral decision science, and the people, risks, and ideas behind Yellowlights.ai.',
+    date: 'October 2026',
+    readTime: '24 min read',
+    content: relevance,
+    audio: {
+      title: 'How Trace Hancock Built Yellowlights.ai',
+      url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Trace_Hancock_Built_Yellowlights_AI_96k.m4a',
+      downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Trace_Hancock_Built_Yellowlights_AI_96k.m4a?download=1',
+      durationSeconds: 1404.087438,
+    },
+  },
   {
     id: '1',
     slug: 'yellow-light',

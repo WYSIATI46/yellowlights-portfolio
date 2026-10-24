@@ -1,7 +1,5 @@
 # Designing for the Second Thought
 
-### Why modern UX is failing human psychology by optimizing exclusively for speed, and how we can re-engineer friction.
-
 
 ***
 
