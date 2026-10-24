@@ -1,7 +1,5 @@
 # The Yellow Light: In Praise of the Intentional Pause
 
-*In a world calibrated for instant clicks, the most radical design intervention is a deliberate hesitation. Mapping the benefits of 'Choice Sludge.'*
-
 ***
 
 ## The Tyranny of Speed

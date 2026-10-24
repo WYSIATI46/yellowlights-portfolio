@@ -1,7 +1,5 @@
 # The Mind Behind the Mirror: A Portrait of Daniel Kahneman
 
-*He spent his life mapping the flaws in human judgment. Then, at ninety, he made his final decision, the most deliberate one of all.*
-
 ## Paris, March 2024
 
 On a bright March morning in Paris, a 90‑year‑old Daniel Kahneman sat at a small desk in his hotel room and went to work.[^1][^2]

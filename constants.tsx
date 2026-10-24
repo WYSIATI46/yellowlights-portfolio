@@ -21,7 +21,17 @@ export const PROJECTS: Project[] = [
   { id: 'bayesian-translator', title: 'The Bayesian Translator', description: 'Converts any probability claim into Bayes\' theorem, natural frequencies, and icon arrays. Makes conditional probability intuitive.', tags: ['Science', 'Logic'], link: 'https://yellowlights.ai/bayesian-translator/' },
 ];
 
+// This list defines visible Journal order; ARTICLES also retains archived routes.
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: '21',
+    slug: 'relevance-an-unfinished-education',
+    title: 'Relevance: An Unfinished Education',
+    excerpt: 'The unlikely journey from working-class Portland to behavioral decision science, and the people, risks, and ideas behind Yellowlights.ai.',
+    date: 'October 2026',
+    readTime: '24 min read',
+    tags: ['HISTORY', 'BEHAVIORAL']
+  },
   {
     id: '1',
     slug: 'yellow-light',
@@ -30,24 +40,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'March 2026',
     readTime: '11 min read',
     tags: ['BEHAVIORAL', 'SCIENCE']
-  },
-  {
-    id: '2',
-    slug: 'designing-second-thought',
-    title: 'Designing for the Second Thought',
-    excerpt: "Modern UX is optimized for speed at the expense of judgment. Here's how to engineer friction that actually helps.",
-    date: 'March 2026',
-    readTime: '8 min read',
-    tags: ['BEHAVIORAL', 'UI']
-  },
-  {
-    id: '3',
-    slug: 'systemic-heuristics',
-    title: 'Systemic Heuristics in Institutional Logic',
-    excerpt: "Organizations don't just inherit their founders' ideas — they inherit their biases. A structural analysis of how shortcuts become policy.",
-    date: 'March 2026',
-    readTime: '15 min read',
-    tags: ['BEHAVIORAL', 'ARCHITECTURE']
   },
   {
     id: '4',
@@ -86,87 +78,6 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['TRIBUTE', 'SCIENCE']
   },
   {
-    id: '8',
-    slug: 'running-old-software',
-    title: "You're Not Irrational. You're Running Old Software.",
-    excerpt: "Cognitive bias isn't a character flaw. It's an evolutionary mismatch — ancient hardware running in a modern environment.",
-    date: 'March 2026',
-    readTime: '10 min read',
-    tags: ['BEHAVIORAL', 'SCIENCE']
-  },
-  {
-    id: '9',
-    slug: 'speed-trap',
-    title: 'The Speed Trap: How Urgency Hijacks Your Best Thinking',
-    excerpt: "Modern work culture rewards urgency. It penalizes deliberation. Here's the cognitive cost nobody's accounting for.",
-    date: 'March 2026',
-    readTime: '10 min read',
-    tags: ['BEHAVIORAL', 'SCIENCE']
-  },
-  {
-    id: '10',
-    slug: 'confidence-not-accuracy',
-    title: "Confidence Is Not Accuracy: A Field Guide to Knowing What You Don't Know",
-    excerpt: 'The most dangerous thing a decision-maker can do is confuse how certain they feel with how right they are.',
-    date: 'March 2026',
-    readTime: '11 min read',
-    tags: ['SCIENCE', 'LOGIC']
-  },
-  {
-    id: '11',
-    slug: 'pre-decision',
-    title: 'The Pre-Decision: Why What Happens Before the Choice Matters Most',
-    excerpt: 'The quality of most decisions is determined before deliberation begins. Everything is framing.',
-    date: 'March 2026',
-    readTime: '10 min read',
-    tags: ['ARCHITECTURE', 'LOGIC']
-  },
-  {
-    id: '12',
-    slug: 'noise-not-hearing',
-    title: "The Noise You're Not Hearing",
-    excerpt: 'Everyone talks about bias. Almost no one is talking about the larger problem: random variability in judgments that should be identical.',
-    date: 'March 2026',
-    readTime: '11 min read',
-    tags: ['SCIENCE', 'LOGIC']
-  },
-  {
-    id: '13',
-    slug: 'foxes-hedgehogs',
-    title: 'Foxes, Hedgehogs, and the Discipline of Being Wrong Less Often',
-    excerpt: 'Philip Tetlock spent decades studying expert prediction. What he found should unsettle anyone who trusts their own convictions.',
-    date: 'March 2026',
-    readTime: '11 min read',
-    tags: ['SCIENCE', 'LOGIC']
-  },
-  {
-    id: '14',
-    slug: 'bias-always-bug',
-    title: 'Is Bias Always a Bug? The Adaptive Case for Heuristics',
-    excerpt: "The debiasing industry assumes your intuitions are the enemy. Gerd Gigerenzer disagrees — and so does the data.",
-    date: 'March 2026',
-    readTime: '11 min read',
-    tags: ['SCIENCE', 'BEHAVIORAL']
-  },
-  {
-    id: '15',
-    slug: 'biased-oracle',
-    title: 'The Biased Oracle: What LLMs Get Wrong About Judgment',
-    excerpt: "AI doesn't just inherit human cognitive biases — in key domains, it amplifies them. The question isn't whether to use it. It's how.",
-    date: 'March 2026',
-    readTime: '12 min read',
-    tags: ['SCIENCE', 'AI']
-  },
-  {
-    id: '16',
-    slug: 'decision-hygiene',
-    title: 'Decision Hygiene as Organizational Infrastructure',
-    excerpt: 'Training individuals to think better rarely works. Redesigning the environment they decide inside of usually does.',
-    date: 'March 2026',
-    readTime: '11 min read',
-    tags: ['ARCHITECTURE', 'LOGIC']
-  },
-  {
     id: '17',
     slug: 'rabble-rouser-thaler',
     title: 'The Rabble-Rouser Who Made Economics Human: A Portrait of Richard Thaler',
@@ -185,13 +96,13 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['HISTORY', 'SCIENCE']
   },
   {
-    id: '19',
-    slug: 'michael-lewis',
-    title: 'The Man Who Explained Us to Ourselves: A Portrait of Michael Lewis',
-    excerpt: "A review he didn't like led him, eight years and one unlikely friendship later, to write the truest book of his career.",
-    date: 'July 2026',
-    readTime: '15 min read',
-    tags: ['HISTORY', 'BEHAVIORAL']
+    id: '13',
+    slug: 'foxes-hedgehogs',
+    title: 'Foxes, Hedgehogs, and the Discipline of Being Wrong Less Often',
+    excerpt: 'Philip Tetlock spent decades studying expert prediction. What he found should unsettle anyone who trusts their own convictions.',
+    date: 'March 2026',
+    readTime: '11 min read',
+    tags: ['SCIENCE', 'LOGIC']
   },
   {
     id: '20',
@@ -201,5 +112,95 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'July 2026',
     readTime: '13 min read',
     tags: ['BEHAVIORAL', 'SCIENCE']
+  },
+  {
+    id: '19',
+    slug: 'michael-lewis',
+    title: 'The Man Who Explained Us to Ourselves: A Portrait of Michael Lewis',
+    excerpt: "A review he didn't like led him, eight years and one unlikely friendship later, to write the truest book of his career.",
+    date: 'July 2026',
+    readTime: '15 min read',
+    tags: ['HISTORY', 'BEHAVIORAL']
+  },
+  {
+    id: '8',
+    slug: 'running-old-software',
+    title: "You're Not Irrational. You're Running Old Software.",
+    excerpt: "Cognitive bias isn't a character flaw. It's an evolutionary mismatch — ancient hardware running in a modern environment.",
+    date: 'March 2026',
+    readTime: '10 min read',
+    tags: ['BEHAVIORAL', 'SCIENCE']
+  },
+  {
+    id: '14',
+    slug: 'bias-always-bug',
+    title: 'Is Bias Always a Bug? The Adaptive Case for Heuristics',
+    excerpt: "The debiasing industry assumes your intuitions are the enemy. Gerd Gigerenzer disagrees — and so does the data.",
+    date: 'March 2026',
+    readTime: '11 min read',
+    tags: ['SCIENCE', 'BEHAVIORAL']
+  },
+  {
+    id: '10',
+    slug: 'confidence-not-accuracy',
+    title: "Confidence Is Not Accuracy: A Field Guide to Knowing What You Don't Know",
+    excerpt: 'The most dangerous thing a decision-maker can do is confuse how certain they feel with how right they are.',
+    date: 'March 2026',
+    readTime: '11 min read',
+    tags: ['SCIENCE', 'LOGIC']
+  },
+  {
+    id: '12',
+    slug: 'noise-not-hearing',
+    title: "The Noise You're Not Hearing",
+    excerpt: 'Everyone talks about bias. Almost no one is talking about the larger problem: random variability in judgments that should be identical.',
+    date: 'March 2026',
+    readTime: '11 min read',
+    tags: ['SCIENCE', 'LOGIC']
+  },
+  {
+    id: '11',
+    slug: 'pre-decision',
+    title: 'The Pre-Decision: Why What Happens Before the Choice Matters Most',
+    excerpt: 'The quality of most decisions is determined before deliberation begins. Everything is framing.',
+    date: 'March 2026',
+    readTime: '10 min read',
+    tags: ['ARCHITECTURE', 'LOGIC']
+  },
+  {
+    id: '9',
+    slug: 'speed-trap',
+    title: 'The Speed Trap: How Urgency Hijacks Your Best Thinking',
+    excerpt: "Modern work culture rewards urgency. It penalizes deliberation. Here's the cognitive cost nobody's accounting for.",
+    date: 'March 2026',
+    readTime: '10 min read',
+    tags: ['BEHAVIORAL', 'SCIENCE']
+  },
+  {
+    id: '3',
+    slug: 'systemic-heuristics',
+    title: 'Systemic Heuristics in Institutional Logic',
+    excerpt: "Organizations don't just inherit their founders' ideas — they inherit their biases. A structural analysis of how shortcuts become policy.",
+    date: 'March 2026',
+    readTime: '15 min read',
+    tags: ['BEHAVIORAL', 'ARCHITECTURE']
+  },
+  {
+    id: '16',
+    slug: 'decision-hygiene',
+    title: 'Decision Hygiene as Organizational Infrastructure',
+    excerpt: 'Training individuals to think better rarely works. Redesigning the environment they decide inside of usually does.',
+    date: 'March 2026',
+    readTime: '11 min read',
+    tags: ['ARCHITECTURE', 'LOGIC']
+  },
+  {
+    id: '15',
+    slug: 'biased-oracle',
+    title: 'The Biased Oracle: What LLMs Get Wrong About Judgment',
+    excerpt: "AI doesn't just inherit human cognitive biases — in key domains, it amplifies them. The question isn't whether to use it. It's how.",
+    date: 'March 2026',
+    readTime: '12 min read',
+    tags: ['SCIENCE', 'AI']
   },
 ];

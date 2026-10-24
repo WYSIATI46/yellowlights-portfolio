@@ -1,7 +1,5 @@
 # Systemic Heuristics in Institutional Logic
 
-### How Organizations Inherit the Biases of Their Founders and Architects: A Structural Analysis of Decision-Making Inheritance
-
 ***
 
 ## Opening Thesis: Institutions Think
