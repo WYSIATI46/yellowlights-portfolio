@@ -5,7 +5,7 @@ Assistant: Codex
 Repository: WYSIATI46/yellowlights-portfolio  
 Branch: codex/journal-four-article-release  
 Base: aaa09ce (main)  
-Commit/PR: release commit containing this note; PR to main follows preview validation.
+Implementation commit: 21bdc9122f8398b6050e7c4c8556aa704cfa1f71. This documentation-only follow-up records final validation; PR targets main.
 
 ## Change
 
@@ -40,7 +40,13 @@ Original sources remain in Downloads; optimized files and technical manifests re
 - Verbatim comparison against the supplied revised archive and source comparison of both existing registries pass.
 - Local browser: all four card clicks, headings, citation definitions/links/returns, correct audio URLs and actual durations, play progression, pause, seek to 60 seconds, 1.5× speed, and actual downloads pass.
 - Desktop 1440×1000: cards 21–24 occupy a complete fifth row. Mobile 390×844: one column; all four article pages have no horizontal overflow. Screenshots retained outside the commit in output/playwright.
-- Preview deployment and regression checks: pending before PR creation.
+- Vercel preview READY: https://yellowlights-portfolio-3dsu4i7wm-traces-projects-217c48ee.vercel.app (deployment dpl_7rYVJRkVS5jmzcrfDywVBS6Pd8vP, implementation commit 21bdc91). Remote build passes in 11 seconds.
+- Preview: all four new articles pass the same controls, downloads, citation/return navigation, metadata/duration, and responsive checks. Citation counts: 24, 28, 27, 30. All fragment targets exist; source links retain their approved URLs. No new runtime exceptions.
+- All 21 existing routes load and retain their correct audio URLs. Playback/pause passes for yellow-light, rabble-rouser-thaler, and archived designing-second-thought.
+- All four uploads return HTTP 206 for byte ranges and HTTP 200 audio/mp4 with attachment disposition for downloads. Actual browser-download SHA-256 checksums match each optimized original. A separate curl download of Too Good To Go reached its 40-second time limit; the completed browser download verified the file instead.
+- Current production index.css also returns text/html, confirming the preview stylesheet warning predates this release. Local favicon and Tailwind warnings are likewise existing issues.
+- Source archive SHA-256: 6493cf4ca9bfd4342aa59c2a85b5e177fa286a82186afe509769d6c2c0f6f0fa.
+- The original Changes panel count of 22,464 lines was unrelated untracked output: .playwright-cli (3,451), output (9,514), and the-superforecasters-studio-audit (9,499). Those files and its zip were locally excluded via .git/info/exclude, preserved on disk, and excluded from the release. No dependency directories, media, generated files, credentials, or unrelated code are committed.
 
 ## Open issues and stale documentation
 
