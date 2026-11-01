@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Brain } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { ARTICLES } from '../articles';
 import ArticleAudioPlayer from './ArticleAudioPlayer';
 
@@ -66,13 +67,14 @@ const ArticlePage: React.FC = () => {
       </div>
 
       {/* Article Body — Inter for body, Fraunces (serif) for headings */}
-      <article className="px-6 sm:px-12 pb-40">
+      <article className="px-6 sm:px-12 pb-40 break-words">
         <div className="max-w-3xl mx-auto">
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               h1: () => null, // H1 is already rendered from article metadata above
-              h2: ({ children }) => (
-                <h2 className="serif text-3xl font-black italic mt-16 mb-6 text-black">{children}</h2>
+              h2: ({ node, children, className, ...props }) => (
+                <h2 {...props} className={className ?? "serif text-3xl font-black italic mt-16 mb-6 text-black"}>{children}</h2>
               ),
               h3: ({ children }) => (
                 <h3 className="serif text-2xl font-bold italic mt-12 mb-4 text-black">{children}</h3>
@@ -98,11 +100,17 @@ const ArticlePage: React.FC = () => {
               ol: ({ children }) => (
                 <ol className="list-decimal pl-6 space-y-2 mb-6 text-zinc-600">{children}</ol>
               ),
-              li: ({ children }) => (
-                <li className="text-lg font-light leading-relaxed">{children}</li>
+              li: ({ node, children, ...props }) => (
+                <li {...props} className="text-lg font-light leading-relaxed">{children}</li>
               ),
-              a: ({ href, children }) => (
-                <a href={href} className="text-yellow-700 underline underline-offset-2 hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">{children}</a>
+              a: ({ node, href, children, ...props }) => (
+                <a
+                  {...props}
+                  href={href}
+                  className="text-yellow-700 underline underline-offset-2 hover:text-black transition-colors"
+                  target={href?.startsWith('#') ? undefined : '_blank'}
+                  rel={href?.startsWith('#') ? undefined : 'noopener noreferrer'}
+                >{children}</a>
               ),
               hr: () => (
                 <hr className="my-12 border-black/5" />

@@ -1,3 +1,7 @@
+import humanJudgmentAlgorithm from './articles/human-judgment-algorithm.md?raw';
+import bookingExperimentation from './articles/booking-experimentation.md?raw';
+import germanBakery from './articles/german-bakery.md?raw';
+import tooGoodToGo from './articles/too-good-to-go.md?raw';
 import relevance from './articles/relevance-an-unfinished-education.md?raw';
 import yellowLight from './articles/yellow-light.md?raw';
 import systemicHeuristics from './articles/systemic-heuristics.md?raw';
@@ -350,6 +354,66 @@ export const ARTICLES: Article[] = [
       url: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Trusting_intuition_in_wicked_environments_96k-FoHpQVu1Riqgqt3RAxL1rwwdUIILR0.m4a',
       downloadUrl: 'https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Trusting_intuition_in_wicked_environments_96k-FoHpQVu1Riqgqt3RAxL1rwwdUIILR0.m4a?download=1',
       durationSeconds: 1482.036825,
+    },
+  },
+  {
+    id: "22",
+    slug: "human-judgment-algorithm",
+    title: "When Human Judgment Adds Value to the Algorithm",
+    subtitle: "The surprising economics of knowing what to automate, what to question, and where to intervene.",
+    date: "November 2026",
+    readTime: "10 min read",
+    content: humanJudgmentAlgorithm,
+    audio: {
+      title: "When to Override Algorithmic Decisions",
+      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/When_to_Override_Algorithmic_Decisions_96k-SLl8pcyAqiceD0KuTZi7SqjyxMvLrP.m4a",
+      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/When_to_Override_Algorithmic_Decisions_96k-SLl8pcyAqiceD0KuTZi7SqjyxMvLrP.m4a?download=1",
+      durationSeconds: 1473.956281,
+    },
+  },
+  {
+    id: "23",
+    slug: "booking-experimentation",
+    title: "When the Boss Has a Hypothesis",
+    subtitle: "How Booking.com made evidence a challenge to authority, and why even an experimentation culture needs to question itself.",
+    date: "November 2026",
+    readTime: "11 min read",
+    content: bookingExperimentation,
+    audio: {
+      title: "How Booking.com Experiments",
+      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Booking_96k-gxrGFvj1niED1qkCDGI87oCYxzuMKz.m4a",
+      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/How_Booking_96k-gxrGFvj1niED1qkCDGI87oCYxzuMKz.m4a?download=1",
+      durationSeconds: 1252.205714,
+    },
+  },
+  {
+    id: "24",
+    slug: "german-bakery",
+    title: "The German Bakery That Sold More by Removing Paperwork",
+    subtitle: "How an experiment with two workplace checklists revealed the difference between supporting good work and demanding proof of it.",
+    date: "November 2026",
+    readTime: "9 min read",
+    content: germanBakery,
+    audio: {
+      title: "Why One Bakery Scrapped Smile Checklists",
+      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_One_Bakery_Scrapped_Smile_Checklists_96k-BeDfTmHIXrrQ47YSLuM9l2QOxrAnq7.m4a",
+      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_One_Bakery_Scrapped_Smile_Checklists_96k-BeDfTmHIXrrQ47YSLuM9l2QOxrAnq7.m4a?download=1",
+      durationSeconds: 322.850249,
+    },
+  },
+  {
+    id: "25",
+    slug: "too-good-to-go",
+    title: "The Surprise Bag: How Too Good To Go Made Surplus Desirable",
+    subtitle: "A Copenhagen startup built a global marketplace around products customers could not fully choose. Its next chapter will test how well commercial growth, consumer value, and waste reduction travel together.",
+    date: "November 2026",
+    readTime: "12 min read",
+    content: tooGoodToGo,
+    audio: {
+      title: "Too Good To Go Sells Uncertainty",
+      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Too_Good_To_Go_Sells_Uncertainty_96k-QKybzcDGgQtuun2gs5I1HAxQHkIL8d.m4a",
+      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Too_Good_To_Go_Sells_Uncertainty_96k-QKybzcDGgQtuun2gs5I1HAxQHkIL8d.m4a?download=1",
+      durationSeconds: 1309.094603,
     },
   },
 ];
