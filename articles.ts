@@ -395,10 +395,10 @@ export const ARTICLES: Article[] = [
     readTime: "9 min read",
     content: germanBakery,
     audio: {
-      title: "Why One Bakery Scrapped Smile Checklists",
-      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_One_Bakery_Scrapped_Smile_Checklists_96k-BeDfTmHIXrrQ47YSLuM9l2QOxrAnq7.m4a",
-      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/Why_One_Bakery_Scrapped_Smile_Checklists_96k-BeDfTmHIXrrQ47YSLuM9l2QOxrAnq7.m4a?download=1",
-      durationSeconds: 322.850249,
+      url: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/When_a_Bakery_Ditched_Daily_Checklists_96k-1z63pZ41mLAC444PbsMVG32DXGGsbv.m4a",
+      downloadUrl: "https://v6sltbivoauquric.public.blob.vercel-storage.com/journal/When_a_Bakery_Ditched_Daily_Checklists_96k-1z63pZ41mLAC444PbsMVG32DXGGsbv.m4a?download=1",
+      durationSeconds: 1585.365624,
+      title: "When a Bakery Ditched Daily Checklists",
     },
   },
   {
