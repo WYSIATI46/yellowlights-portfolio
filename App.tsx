@@ -291,7 +291,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <span className="mono text-[10px] uppercase font-black tracking-[0.2em] text-zinc-400">Engagement Status</span>
-                  <p className="text-sm font-bold text-black">Accepting Opportunities Q2 2026</p>
+                  <p className="text-sm font-bold text-black">Open to Opportunities</p>
                 </div>
               </div>
             </div>
