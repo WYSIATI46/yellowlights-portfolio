@@ -63,6 +63,9 @@ assert not BASE or mime == 'application/xml', mime
 urls = [node.text for node in ET.fromstring(sitemap).findall('{*}url/{*}loc')]
 slugs = re.findall(r'\bslug:\s*[\'\"]([^\'\"]+)', Path('articles.ts').read_text())
 expected = [ORIGIN + '/', *[f'{ORIGIN}/journal/{slug}' for slug in slugs]]
+artifact_paths = [urlsplit(url).path for url in re.findall(
+    r"link: '(https://(?:www\.)?yellowlights.ai[^']+)'", Path('constants.tsx').read_text())]
+expected += [ORIGIN + path for path in artifact_paths]
 assert len(urls) == len(set(urls)) and set(urls) == set(expected)
 robots, mime = fetch('/robots.txt')
 assert not BASE or mime == 'text/plain', mime
@@ -73,6 +76,18 @@ titles = set()
 audio_count = 0
 for url in urls:
     path = urlsplit(url).path
+    if path in artifact_paths:
+        # Artifacts remain proxied apps, not portfolio prerender output.
+        assert not Path(f'dist{path}/index.html').exists(), path
+        if BASE:
+            html, mime = fetch(path)
+            assert mime == 'text/html' and 'data-prerendered' not in html, path
+            page = Page(html)
+            assert len([tag for tag, _ in page.tags if tag == 'title']) == 1, path
+            assert '<title>Trace Hancock | Prismatic Decision Science</title>' not in html, path
+            assert not any('noindex' in attrs.get('content', '').lower()
+                           for attrs in page.attrs('meta', 'name', 'robots')), path
+        continue
     html, mime = fetch(path)
     assert not BASE or mime == 'text/html', (path, mime)
     page = Page(html)
@@ -113,4 +128,4 @@ if BASE:
         assert error.code == 404
         assert 'noindex' in error.read().decode()
 
-print(f'PASS: {len(urls)} pages; {audio_count} article bodies/audio sources; unique metadata, canonical URLs, JSON-LD, sitemap and robots' + (' HTTP content types and Journal 404.' if BASE else '.'))
+print(f'PASS: {len(urls)} sitemap URLs ({len(urls) - len(artifact_paths)} prerendered pages, {len(artifact_paths)} proxied artifacts); {audio_count} article bodies/audio sources; unique portfolio metadata, canonical URLs, JSON-LD, sitemap and robots' + (' HTTP content types, artifact routes and Journal 404.' if BASE else '.'))
