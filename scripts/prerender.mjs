@@ -20,9 +20,12 @@ try {
   }
   if (BLOG_POSTS.some(post => !slugs.has(post.slug))) throw new Error('Featured article missing from registry.');
   const template = await readFile('dist/index.html', 'utf8');
+  if (!template.includes('<div id="root"></div>') || !/<title>[^<]*<\/title>/.test(template)) {
+    throw new Error('Prerender template is missing its root or title placeholder.');
+  }
   const routes = ['/', ...ARTICLES.map(article => `/journal/${article.slug}`)];
   const page = path => template
-    .replace(/<title>[^<]*<\/title>/, renderSeo(path))
+    .replace(/<title>[^<]*<\/title>/, () => renderSeo(path))
     .replace('<div id="root"></div>', () => `<div id="root" data-prerendered>${render(path)}</div>`);
   for (const path of routes) {
     const directory = path === '/' ? 'dist' : `dist${path}`;

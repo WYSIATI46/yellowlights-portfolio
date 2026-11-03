@@ -9,7 +9,7 @@ function RouteMetadata() {
   useEffect(() => {
     // Keep client navigation and browser back/forward consistent with static HTML.
     const head = new DOMParser().parseFromString(renderSeo(pathname), 'text/html').head;
-    document.head.querySelectorAll('[data-seo]').forEach(node => node.remove());
+    document.head.querySelectorAll('[data-seo], title').forEach(node => node.remove());
     document.head.append(...Array.from(head.childNodes));
   }, [pathname]);
   return null;

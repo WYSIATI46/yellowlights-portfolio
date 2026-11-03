@@ -7,14 +7,16 @@ import json
 import os
 import re
 from html.parser import HTMLParser
+from http.cookiejar import CookieJar
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.parse import urlsplit, urlunsplit
-from urllib.request import urlopen
+from urllib.request import HTTPCookieProcessor, build_opener
 import xml.etree.ElementTree as ET
 
 ORIGIN = 'https://www.yellowlights.ai'
 BASE = os.environ.get('SEO_BASE_URL')
+http = build_opener(HTTPCookieProcessor(CookieJar()))
 
 
 def fetch(path):
@@ -24,7 +26,7 @@ def fetch(path):
         return Path(file).read_text(), ''
     base = urlsplit(BASE)
     url = urlunsplit((base.scheme, base.netloc, path, base.query, ''))
-    with urlopen(url, timeout=30) as response:
+    with http.open(url, timeout=30) as response:
         assert response.status == 200, path
         return response.read().decode(), response.headers.get_content_type()
 
