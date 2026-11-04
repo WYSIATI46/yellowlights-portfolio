@@ -1,17 +1,19 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App'
-import ArticlePage from './components/ArticlePage'
+import { BrowserRouter } from 'react-router-dom'
+import SiteRoutes from './SiteRoutes'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+const app = (
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/journal/:slug" element={<ArticlePage />} />
-      </Routes>
+      <SiteRoutes />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+if (root.hasAttribute('data-prerendered')) {
+  ReactDOM.hydrateRoot(root, app)
+} else {
+  ReactDOM.createRoot(root).render(app)
+}

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
 
@@ -26,7 +26,6 @@ const SubstackIcon = () => (
 );
 
 const App: React.FC = () => {
-  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -198,9 +197,9 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {BLOG_POSTS.map((post, idx) => (
-              <div
+              <Link
                 key={post.id}
-                onClick={() => navigate(`/journal/${post.slug}`)}
+                to={`/journal/${post.slug}`}
                 className="cursor-pointer block"
               >
                 <div className="bg-white p-8 rounded-[2.5rem] flex flex-col h-full group border border-black/5 hover:shadow-lg transition-all">
@@ -229,7 +228,7 @@ const App: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -198,7 +198,27 @@
       "check": true
     },
     {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml",
+      "headers": { "Content-Type": "application/xml; charset=utf-8" }
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt",
+      "headers": { "Content-Type": "text/plain; charset=utf-8" }
+    },
+    {
+      "src": "/journal/([^/]+)/?",
+      "dest": "/journal/$1/index.html",
+      "check": true
+    },
+    {
       "handle": "filesystem"
+    },
+    {
+      "src": "/journal(?:/.*)?",
+      "dest": "/404.html",
+      "status": 404
     },
     {
       "src": "/(.*)",
